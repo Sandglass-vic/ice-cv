@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>粟琬宁 · 个人简历与作品集</title>
+<meta name="description" content="粟琬宁｜河北经贸大学旅游管理本科。海外内容运营实习经历，借助 AI 独立开发 2 款 iOS 应用。求职方向：海外市场增长、海外内容运营、SaaS 客户成功。">
+<meta name="theme-color" content="#060914">
+<meta property="og:type" content="website">
+<meta property="og:title" content="粟琬宁 · 个人简历与作品集">
+<meta property="og:description" content="做面向海外用户的内容运营，也能借助 AI 把想法做成可用的软件。">
+<meta property="og:url" content="https://sandglass-vic.github.io/ice-cv/">
+<meta property="og:image" content="https://sandglass-vic.github.io/ice-cv/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<script>if (/[?&]static\b/.test(location.search)) document.documentElement.classList.add('static');</script>
+<style>
+  #net { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; opacity: .75; }
+  section { padding: 110px 0; position: relative; scroll-margin-top: var(--top-h); }
+  .alt { background: linear-gradient(180deg, transparent, rgba(11, 17, 36, .78) 18%, rgba(11, 17, 36, .78) 82%, transparent); }
+  .sec-head { text-align: center; max-width: 720px; margin: 0 auto 56px; }
+  .eyebrow { color: var(--cyan); font: 600 13px var(--mono); letter-spacing: 3px; display: inline-flex; align-items: center; gap: 10px; }
+  .eyebrow .no { color: var(--muted); }
+  .eyebrow::before, .eyebrow::after { content: ""; width: 28px; height: 1px; background: linear-gradient(90deg, transparent, var(--cyan)); }
+  .eyebrow::after { transform: scaleX(-1); }
+  .sec-head h2 { font-size: 42px; font-weight: 800; margin-top: 12px; line-height: 1.25; }
+  .sec-head p { color: var(--muted); font-size: 17px; margin-top: 14px; }
+  .mono { font-family: var(--mono); }
+
+  /* ---------- hero ---------- */
+  .hero { position: relative; padding: calc(var(--top-h) + 80px) 0 100px; overflow: hidden; min-height: 100vh; display: flex; align-items: center; }
+  .static .hero { min-height: 0; }
+  .hero::before {
+    content: ""; position: absolute; inset: 0;
+    background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 56px 56px; mask-image: radial-gradient(ellipse at 50% 35%, #000 20%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 35%, #000 20%, transparent 70%); opacity: .5;
+  }
+  .orb { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .5; animation: float 12s ease-in-out infinite; pointer-events: none; }
+  @keyframes float { 0%,100% { transform: translate(0,0); } 50% { transform: translate(30px,-30px); } }
+  .hero > .wrap { position: relative; width: 100%; display: grid; grid-template-columns: 1.2fr .8fr; gap: 56px; align-items: center; }
+  .tag {
+    display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-size: 14px; color: var(--cyan);
+    border: 1px solid rgba(34, 211, 238, .35); background: rgba(34, 211, 238, .08); margin-bottom: 22px;
+  }
+  .tag i { width: 8px; height: 8px; border-radius: 50%; background: #34d399; box-shadow: 0 0 0 0 rgba(52, 211, 153, .7); animation: ping 2s infinite; }
+  @keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(52,211,153,.6); } 80%,100% { box-shadow: 0 0 0 10px rgba(52,211,153,0); } }
+  .hello { font: 500 15px var(--mono); color: var(--muted); }
+  .hello b { color: var(--cyan); font-weight: 600; }
+  .hero h1 { font-size: 72px; line-height: 1.1; font-weight: 800; letter-spacing: 2px; margin-top: 8px; }
+  .hero h1 small { font-size: 26px; letter-spacing: 1px; margin-left: 16px; font-weight: 700; vertical-align: middle; }
+  html[lang="en"] .hero h1 { letter-spacing: -1px; }
+  .typed { font-size: 23px; line-height: 1.55; margin: 22px 0 24px; min-height: 2em; max-width: 620px; color: #dbe3ff; }
+  .typed .caret { display: inline-block; width: 2px; height: 1.05em; margin-left: 3px; vertical-align: -3px; background: var(--cyan); box-shadow: 0 0 8px var(--cyan); animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .roles { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .roles .lab { font: 600 13px var(--mono); color: var(--muted); margin-right: 4px; }
+  .roles span.r { padding: 6px 14px; border-radius: 10px; font-size: 14px; border: 1px solid rgba(59, 130, 255, .35); background: rgba(59, 130, 255, .1); color: #cfe0ff; }
+  .edu-line { margin-top: 18px; color: var(--muted); font-size: 15px; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .edu-line span::before { content: "▹ "; color: var(--cyan); }
+  .cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px; }
+
+  .avatar-wrap { position: relative; justify-self: center; width: 340px; max-width: 100%; }
+  .avatar-wrap::before {
+    content: ""; position: absolute; width: 440px; height: 440px; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    background: radial-gradient(circle, rgba(59,130,255,.42), transparent 65%); filter: blur(24px);
+  }
+  .avatar { position: relative; aspect-ratio: 4 / 5; border-radius: 34px; padding: 3px; overflow: hidden; }
+  .avatar::before {
+    content: ""; position: absolute; inset: -50%; animation: spin 6s linear infinite;
+    background: conic-gradient(from 0deg, transparent 0 55%, #3b82ff 70%, #22d3ee 85%, transparent 100%);
+  }
+  @keyframes spin { to { transform: rotate(1turn); } }
+  .avatar .inner { position: relative; height: 100%; border-radius: 31px; overflow: hidden; background: #fff; box-shadow: inset 0 0 0 1px rgba(255,255,255,.1); }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; display: block; }
+  .avatar .scan {
+    position: absolute; left: 0; right: 0; height: 30%; top: -30%;
+    background: linear-gradient(180deg, transparent, rgba(34, 211, 238, .18), transparent); animation: scan 4.5s ease-in-out infinite;
+  }
+  @keyframes scan { 0% { top: -30%; } 60%,100% { top: 100%; } }
+  .corner { position: absolute; width: 22px; height: 22px; border: 2px solid var(--cyan); z-index: 2; }
+  .corner.tl { top: -10px; left: -10px; border-right: 0; border-bottom: 0; border-top-left-radius: 8px; }
+  .corner.br { bottom: -10px; right: -10px; border-left: 0; border-top: 0; border-bottom-right-radius: 8px; }
+  .badge {
+    position: absolute; z-index: 3; padding: 9px 14px; border-radius: 14px; font-size: 13px; white-space: nowrap;
+    background: rgba(11, 17, 36, .78); border: 1px solid var(--line2); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.4); animation: bob 6s ease-in-out infinite;
+  }
+  .badge b { display: block; font: 800 18px var(--mono); }
+  .badge span { color: var(--muted); font-size: 12px; }
+  .badge.b1 { left: -54px; top: 14%; }
+  .badge.b2 { right: -46px; top: 46%; animation-delay: -2s; }
+  .badge.b3 { left: -30px; bottom: 6%; animation-delay: -4s; }
+  @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  .scroll-hint { position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%); color: var(--muted); font: 12px var(--mono); letter-spacing: 3px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .scroll-hint i { width: 1px; height: 34px; background: linear-gradient(var(--cyan), transparent); animation: drop 2s ease-in-out infinite; transform-origin: top; }
+  @keyframes drop { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
+
+  /* ---------- about ---------- */
+  .about { display: grid; grid-template-columns: .95fr 1.05fr; gap: 24px; align-items: stretch; }
+  .intro { padding: 34px; display: flex; flex-direction: column; gap: 22px; }
+  .intro p { font-size: 16.5px; color: #d5ddf5; line-height: 1.85; }
+  .spec { font: 13.5px/1.9 var(--mono); padding: 18px 20px; border-radius: 16px; background: rgba(0, 0, 0, .28); border: 1px solid var(--line); }
+  .spec .dots { display: flex; gap: 6px; margin-bottom: 10px; }
+  .spec .dots i { width: 10px; height: 10px; border-radius: 50%; background: #ff5f57; }
+  .spec .dots i:nth-child(2) { background: #febc2e; } .spec .dots i:nth-child(3) { background: #28c840; }
+  .spec .row { display: grid; grid-template-columns: 92px 1fr; gap: 10px; }
+  .spec .k { color: var(--cyan); }
+  .spec .v { color: #dbe3ff; font-family: -apple-system, "PingFang SC", sans-serif; font-size: 14px; }
+  .strengths { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .str { padding: 28px 26px; }
+  .str .no { font: 700 13px var(--mono); color: var(--cyan); letter-spacing: 2px; }
+  .str h3 { font-size: 19px; margin: 12px 0 8px; }
+  .str p { font-size: 14.5px; color: var(--muted); }
+  .str .ic { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; margin-bottom: 16px; background: rgba(59,130,255,.14); }
+  .str .ic svg { width: 24px; height: 24px; }
+  .str:hover { transform: translateY(-4px); }
+
+  /* ---------- numbers ---------- */
+  .nums { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .num { padding: 28px 24px 24px; overflow: hidden; }
+  .num b { display: block; font-size: 40px; line-height: 1.15; font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: -.5px; white-space: nowrap; }
+  .num b small { font-size: 22px; font-weight: 700; }
+  .num > span { display: block; color: var(--muted); font-size: 14px; margin-top: 8px; }
+  .num .src { display: block; margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--line); font: 12px var(--mono); color: #7f8bb0; }
+  .num::before { content: ""; position: absolute; left: 24px; top: 0; width: 36px; height: 2px; background: var(--grad); box-shadow: 0 0 12px var(--cyan); }
+
+  /* ---------- timeline ---------- */
+  .tl { position: relative; max-width: 980px; margin: 0 auto; padding-left: 64px; }
+  .tl .rail { position: absolute; left: 22px; top: 10px; bottom: 10px; width: 2px; background: rgba(255,255,255,.08); border-radius: 2px; }
+  .tl .rail i { position: absolute; left: 0; top: 0; width: 100%; height: 0; background: var(--grad); border-radius: 2px; box-shadow: 0 0 12px rgba(34,211,238,.6); }
+  .job { position: relative; padding: 30px 32px; margin-bottom: 26px; }
+  .job .dot { position: absolute; left: -53px; top: 34px; width: 24px; height: 24px; border-radius: 50%; background: var(--bg); border: 2px solid var(--cyan); box-shadow: 0 0 0 5px rgba(34,211,238,.12), 0 0 18px rgba(34,211,238,.5); }
+  .job .dot::after { content: ""; position: absolute; inset: 5px; border-radius: 50%; background: var(--grad); }
+  .job-top { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: baseline; }
+  .job h3 { font-size: 22px; }
+  .job .co { color: var(--cyan); font-weight: 600; font-size: 16px; margin-top: 2px; }
+  .date { font: 600 13px var(--mono); color: var(--muted); padding: 5px 12px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255,255,255,.03); white-space: nowrap; }
+  .job ul { margin-top: 16px; }
+  .job li { list-style: none; position: relative; padding-left: 20px; margin: 9px 0; color: #ccd5ef; font-size: 15.5px; }
+  .job li::before { content: ""; position: absolute; left: 2px; top: .68em; width: 7px; height: 7px; border-radius: 2px; background: var(--grad); transform: rotate(45deg); }
+  .metrics { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+  .metrics span { padding: 7px 12px; border-radius: 12px; background: rgba(59,130,255,.1); border: 1px solid rgba(59,130,255,.25); font-size: 13px; color: var(--muted); }
+  .metrics b { color: var(--text); font-family: var(--mono); margin-left: 6px; }
+
+  /* ---------- works ---------- */
+  .works { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+  .work { display: flex; flex-direction: column; overflow: hidden; }
+  .work:hover { transform: translateY(-6px); }
+  .work .vis { position: relative; aspect-ratio: 16 / 9.4; overflow: hidden; border-bottom: 1px solid var(--line); }
+  .work .vis img { display: block; }
+  .vis-psync img.poster { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+  .work:hover .vis-psync img.poster { transform: scale(1.04); }
+  .vis-psync .play { position: absolute; left: 18px; bottom: 16px; display: flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; background: rgba(6,9,20,.78); border: 1px solid var(--line2); backdrop-filter: blur(8px); }
+  .vis-ielts { background: radial-gradient(circle at 50% 120%, rgba(34,211,238,.35), transparent 60%), linear-gradient(160deg, #0f1a3a, #081022); display: flex; justify-content: center; align-items: flex-start; padding-top: 26px; }
+  .vis-ielts .ph { width: 27%; border-radius: 18px; padding: 4px; background: linear-gradient(145deg, #2a3045, #0d1020); box-shadow: 0 20px 40px rgba(0,0,0,.55), inset 0 0 0 1px rgba(255,255,255,.08); transition: transform .5s; }
+  .vis-ielts .ph img { width: 100%; aspect-ratio: 414 / 900; object-fit: cover; border-radius: 14px; }
+  .vis-ielts .ph:nth-child(1) { transform: translate(18%, 26px) rotate(-7deg); }
+  .vis-ielts .ph:nth-child(2) { z-index: 2; width: 31%; }
+  .vis-ielts .ph:nth-child(3) { transform: translate(-18%, 26px) rotate(7deg); }
+  .work:hover .vis-ielts .ph:nth-child(1) { transform: translate(8%, 18px) rotate(-10deg); }
+  .work:hover .vis-ielts .ph:nth-child(3) { transform: translate(-8%, 18px) rotate(10deg); }
+  .work .body { padding: 28px 30px 30px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
+  .work .ttl { display: flex; align-items: center; gap: 14px; }
+  .work .ttl img { width: 48px; height: 48px; border-radius: 13px; }
+  .work h3 { font-size: 24px; line-height: 1.25; }
+  .work .subt { color: var(--muted); font-size: 14px; }
+  .work .meta { font: 12.5px var(--mono); color: var(--cyan); letter-spacing: .5px; }
+  .work p.sum { color: #d0d8f0; font-size: 15.5px; }
+  .mini { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .mini div { padding: 12px 14px; border-radius: 14px; background: rgba(0,0,0,.22); border: 1px solid var(--line); }
+  .mini b { display: block; font: 800 19px var(--mono); }
+  .mini span { font-size: 12.5px; color: var(--muted); }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tags span { font: 12.5px var(--mono); padding: 4px 10px; border-radius: 8px; background: rgba(255,255,255,.05); border: 1px solid var(--line); color: #b9c6ea; }
+  .work .go { margin-top: auto; padding-top: 6px; display: flex; align-items: center; gap: 8px; color: var(--cyan); font-weight: 600; }
+  .work .go i { font-style: normal; transition: transform .3s; }
+  .work:hover .go i { transform: translateX(6px); }
+
+  /* ---------- campus ---------- */
+  .camp { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .comp { padding: 30px 30px 28px; display: flex; flex-direction: column; gap: 12px; }
+  .comp .role { font: 600 12.5px var(--mono); color: var(--cyan); letter-spacing: 1px; }
+  .comp h3 { font-size: 20px; line-height: 1.4; }
+  .comp li { list-style: none; position: relative; padding-left: 18px; margin: 7px 0; color: #ccd5ef; font-size: 15px; }
+  .comp li::before { content: "▹"; position: absolute; left: 0; color: var(--cyan); }
+  .award { margin-top: auto; display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 12px; font-size: 14px; font-weight: 600; color: #fde68a; background: rgba(251,191,36,.1); border: 1px solid rgba(251,191,36,.3); }
+
+  /* ---------- education / honors / skills ---------- */
+  .edu-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; }
+  .edu { padding: 32px; }
+  .edu-head { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; align-items: flex-start; }
+  .edu h3 { font-size: 22px; }
+  .edu .sub { color: var(--muted); font-size: 15px; margin-top: 4px; }
+  .score { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 22px 0 6px; }
+  .score div { padding: 16px 18px; border-radius: 16px; background: rgba(59,130,255,.08); border: 1px solid rgba(59,130,255,.25); }
+  .score b { display: block; font: 800 26px var(--mono); }
+  .score span { color: var(--muted); font-size: 13px; }
+  .cgroup { margin-top: 18px; }
+  .cgroup h4 { font: 600 13px var(--mono); color: var(--cyan); letter-spacing: 1px; margin-bottom: 10px; }
+  .courses { display: flex; flex-wrap: wrap; gap: 8px; }
+  .courses span { font-size: 13.5px; padding: 6px 12px; border-radius: 10px; background: rgba(255,255,255,.04); border: 1px solid var(--line); color: #cfd8f2; }
+  .courses b { font-family: var(--mono); color: var(--cyan); font-weight: 600; margin-left: 6px; font-size: 12.5px; }
+  .honors { padding: 32px; }
+  .honors h3, .skills-title { font-size: 20px; display: flex; align-items: center; gap: 10px; }
+  .honors li { list-style: none; display: flex; gap: 14px; align-items: flex-start; padding: 15px 0; border-top: 1px solid var(--line); font-size: 15px; color: #d5ddf5; }
+  .honors li:first-of-type { border-top: 0; margin-top: 10px; }
+  .honors li i { flex: none; width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; font-style: normal; font-size: 15px; background: rgba(251,191,36,.12); }
+  .skills { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 24px; }
+  .skill { padding: 26px 24px; }
+  .skill h4 { font-size: 17px; display: flex; align-items: center; gap: 10px; }
+  .skill h4 i { width: 8px; height: 8px; border-radius: 2px; background: var(--grad); transform: rotate(45deg); box-shadow: 0 0 8px var(--cyan); }
+  .skill p { color: var(--muted); font-size: 14px; margin-top: 10px; }
+
+  /* ---------- contact ---------- */
+  .contact { text-align: center; padding: 120px 0 110px; }
+  .contact h2 { font-size: 50px; font-weight: 800; line-height: 1.2; margin-top: 14px; }
+  .contact p { color: var(--muted); font-size: 18px; margin: 16px auto 0; max-width: 640px; }
+  .mail { display: inline-flex; align-items: center; gap: 12px; margin-top: 34px; padding: 16px 28px; border-radius: 18px; font: 600 20px var(--mono); border: 1px solid rgba(34,211,238,.4); background: rgba(34,211,238,.07); transition: all .3s; }
+  .mail:hover { background: rgba(34,211,238,.14); box-shadow: 0 0 40px rgba(34,211,238,.25); }
+  .mail svg { width: 22px; height: 22px; color: var(--cyan); }
+  .contact .cta { justify-content: center; }
+
+  @media (max-width: 1080px) {
+    .nums { grid-template-columns: repeat(2, 1fr); }
+    .skills { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 960px) {
+    .hero { min-height: 0; padding: calc(var(--top-h) + 50px) 0 80px; text-align: center; }
+    .hero > .wrap { grid-template-columns: 1fr; gap: 44px; }
+    .avatar-wrap { order: -1; width: 240px; }
+    .avatar-wrap::before { width: 320px; height: 320px; }
+    .hero h1 { font-size: 50px; }
+    .hero h1 small { display: block; margin: 6px 0 0; font-size: 20px; }
+    .typed { font-size: 19px; margin-left: auto; margin-right: auto; }
+    .roles, .edu-line, .cta { justify-content: center; }
+    .badge.b1 { left: -70px; } .badge.b2 { right: -70px; } .badge.b3 { left: -50px; }
+    .scroll-hint { display: none; }
+    .about, .works, .camp, .edu-grid { grid-template-columns: 1fr; }
+    section { padding: 80px 0; }
+    .sec-head h2 { font-size: 32px; }
+    .contact h2 { font-size: 36px; }
+  }
+  @media (max-width: 520px) {
+    .hero h1 { font-size: 42px; }
+    .typed { font-size: 17px; min-height: 3.2em; }
+    .avatar-wrap { width: 200px; }
+    .badge { padding: 6px 10px; } .badge b { font-size: 14px; } .badge span { font-size: 11px; }
+    .badge.b1 { left: -62px; } .badge.b2 { right: -62px; } .badge.b3 { left: -50px; }
+    .roles .lab { width: 100%; margin: 0 0 2px; }
+    .cta .btn { flex: 1 1 100%; justify-content: center; padding: 13px 20px; }
+    .intro, .edu, .honors { padding: 24px 20px; }
+    .spec .row { grid-template-columns: 64px 1fr; }
+    .strengths, .skills { grid-template-columns: 1fr; gap: 12px; }
+    .str, .skill { padding: 20px 18px; }
+    .str { display: grid; grid-template-columns: 40px 1fr; gap: 0 14px; align-items: start; }
+    .str .ic { grid-row: span 2; width: 40px; height: 40px; margin: 2px 0 0; border-radius: 12px; }
+    .str .ic svg { width: 21px; height: 21px; }
+    .str .no { display: none; }
+    .str h3 { margin: 0 0 4px; font-size: 17px; }
+    .str p { font-size: 14px; }
+    .nums { gap: 12px; }
+    .num { padding: 20px 16px 16px; }
+    .num b { font-size: 28px; } .num b small { font-size: 16px; }
+    .num > span { font-size: 13px; }
+    .num .src { display: none; }
+    .tl { padding-left: 34px; }
+    .tl .rail { left: 9px; }
+    .job { padding: 22px 18px; }
+    .job .dot { left: -34px; width: 18px; height: 18px; top: 26px; } .job .dot::after { inset: 3px; }
+    .job h3 { font-size: 18px; }
+    .job li { font-size: 14.5px; }
+    .work .body, .comp { padding: 22px 18px; }
+    .work h3 { font-size: 20px; }
+    .mini b { font-size: 16px; }
+    .mini div { padding: 10px; }
+    .score b { font-size: 21px; }
+    .mail { font-size: 15px; padding: 14px 18px; }
+    .contact h2 { font-size: 30px; }
+    .sec-head h2 { font-size: 28px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .orb, .avatar::before, .avatar .scan, .badge, .tag i, .scroll-hint i, .typed .caret { animation: none; }
+  }
+</style>
+</head>
+<body>
+<canvas id="net" aria-hidden="true"></canvas>
+
+<nav class="site-nav">
+  <div class="wrap nav-in">
+    <a class="s-brand" href="index.html"><span class="mark">SW</span><span><span data-t="brandName">粟琬宁</span><span class="sub"> · Portfolio</span></span></a>
+    <div class="s-tabs">
+      <a class="on" href="index.html" data-t="navResume">简历</a>
+      <a href="psync/index.html"><img src="psync/assets/icon.png" alt="">PSync</a>
+      <a href="ielts/index.html"><img src="ielts/assets/icon.png" alt=""><span data-t="navIelts">雅思逻辑链</span></a>
+    </div>
+    <div class="s-actions">
+      <button class="s-chip s-lang" id="langBtn" type="button" aria-label="切换语言 / Switch language"><b data-l="zh">中</b><i>/</i><b data-l="en">EN</b></button>
+      <a class="s-chip" href="assets/SuWanning_Resume.pdf" download="粟琬宁_简历_SuWanning_Resume.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>PDF</a>
+    </div>
+  </div>
+  <div class="s-progress"></div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="orb" style="width:540px;height:540px;background:#1d4ed8;left:-180px;top:-140px"></div>
+  <div class="orb" style="width:440px;height:440px;background:#0891b2;right:-140px;top:160px;animation-delay:-6s"></div>
+  <div class="wrap">
+    <div>
+      <span class="tag"><i></i><span data-t="heroTag"></span></span>
+      <div class="hello" data-t="hello"></div>
+      <h1><span data-t="name"></span><small class="grad-text" data-t="altName"></small></h1>
+      <p class="typed"><span id="typed"></span><span class="caret"></span></p>
+      <div class="roles" id="roles"></div>
+      <div class="edu-line" id="eduLine"></div>
+      <div class="cta">
+        <a class="btn btn-main" href="assets/SuWanning_Resume.pdf" download="粟琬宁_简历_SuWanning_Resume.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span data-t="btnPdf"></span></a>
+        <a class="btn btn-ghost" href="#works"><span data-t="btnWorks"></span> →</a>
+      </div>
+    </div>
+    <div class="avatar-wrap">
+      <span class="corner tl"></span><span class="corner br"></span>
+      <div class="avatar"><div class="inner"><img src="assets/photo.jpg" alt="粟琬宁 / SU Wanning" width="640" height="791"><span class="scan"></span></div></div>
+      <div class="badge b1"><b class="grad-text">5/52</b><span data-t="bRank"></span></div>
+      <div class="badge b2"><b class="grad-text" data-t="bViewsVal"></b><span data-t="bViews"></span></div>
+      <div class="badge b3"><b class="grad-text">2</b><span data-t="bApps"></span></div>
+    </div>
+  </div>
+  <a class="scroll-hint" href="#about">SCROLL<i></i></a>
+</header>
+
+<main>
+  <section id="about"></section>
+  <section id="numbers" class="alt"></section>
+  <section id="experience"></section>
+  <section id="works" class="alt"></section>
+  <section id="campus"></section>
+  <section id="education" class="alt"></section>
+  <section id="contact" class="contact"></section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span data-t="foot"></span>
+    <nav><a href="index.html" data-t="navResume">简历</a><a href="psync/index.html">PSync</a><a href="ielts/index.html" data-t="navIelts">雅思逻辑链</a><a href="mailto:3173524356@qq.com">Email</a></nav>
+  </div>
+</footer>
+
+<noscript><p style="text-align:center;padding:20px;color:#9aa6c7">本页需要启用 JavaScript；也可以直接下载 <a href="assets/SuWanning_Resume.pdf" style="color:#22d3ee">PDF 简历</a>。</p></noscript>
+
+<!-- 简历结构化数据：由 _work/resume/resume.json 生成，已去除个人隐私字段 -->
+<script type="application/json" id="resume-data">{"zh":{"basics":{"name":"粟琬宁","degree":"管理学学士 · 旅游管理","school":"河北经贸大学 · 旅游学院","major":"旅游管理","email":"3173524356@qq.com","portfolio":"https://sandglass-vic.github.io/ice-cv/","targetRoles":["海外市场增长","海外内容运营","客户成功"]},"education":[{"school":"河北经贸大学","college":"旅游学院","major":"旅游管理","degree":"管理学学士","start":"2022.08","end":"2026.06","gpa":"85.37/100","rank":"5/52"}],"skills":[{"category":"AI 工具","detail":"熟练使用 ChatGPT、DeepSeek、千问、Claude 等进行选题策划、中英文文案与信息整理，能判断并修改 AI 输出；借助 AI 独立开发 2 款 iOS 应用并搭建个人作品集网站。"},{"category":"海外内容与新媒体运营","detail":"运营过小红书、X、Instagram、微博账号，能撰写英文帖子；熟练使用剪映、PR、PS 制作图文与短视频；能结合数据复盘持续优化选题、封面与文案。"},{"category":"用户沟通与数据分析","detail":"累计处理客户咨询 200+ 组，满意度 95%+；熟练使用 Excel 统计与可视化；能基于用户反馈与 OTA 评价提出优化建议并跟进执行；担任石家庄国际车展上汽大众展台主持，对接甲方、讲解车型、引导观众。"},{"category":"语言","detail":"雅思 6.0（阅读 7.0）；英语 CET-4（447）；普通话二级甲等。"}],"experience":[{"title":"AI 新媒体运营实习生（海外方向）","company":"好未来（学而思）","start":"2026.01","end":"2026.03","highlights":["面向海外华人家长及竞赛学员，从 0 到 1 独立搭建并运营小红书、X、Instagram 共 3 个账号，独立负责选题、中英文帖子撰写、配图与发布，统一封面规范与发布节奏，累计发布图文 85+ 篇。","单条内容最高浏览 10 万+；三账号累计曝光约 38 万、月均互动 1000+；按周复盘数据，迭代选题、封面与话术。","使用 AI 工具辅助选题拆解、标题优化与英文文案润色，判断并修改 AI 产出，保证内容符合不同平台的用户习惯。","搭建「内容曝光—私信—进群—顾问承接」获客链路，维护 200+ 人用户群，协同顾问团队完成线索流转与跟进。"],"metrics":[{"label":"运营账号","value":"3 个"},{"label":"发布图文","value":"85+ 篇"},{"label":"单条最高浏览","value":"10 万+"},{"label":"累计曝光","value":"约 38 万"},{"label":"月均互动","value":"1000+"},{"label":"用户群","value":"200+ 人"}]},{"title":"旅行顾问（用户运营方向）","company":"北京国旅华宸旅行社有限公司","start":"2024.06","end":"2024.08","highlights":["日均处理 15–20 组咨询，累计 200+ 组、满意度 95%+；根据一线反馈与 OTA 评价梳理用户需求，提出并落实 2 条产品与话术优化建议，相关线路咨询转化率提升约 15%。","协助运营客户微信群，执行社群福利与活动文案，跟进复购触达与反馈回收，提升社群活跃度与用户留存。","沉淀用户偏好与典型问题，参与产品介绍与推广素材优化，形成可复用的沟通口径与服务支持材料。"],"metrics":[{"label":"累计咨询","value":"200+ 组"},{"label":"满意度","value":"95%+"},{"label":"咨询转化率提升","value":"约 15%"}]}],"projects":[{"name":"PSync","subtitle":"多人面对面照片互传 iOS 应用","role":"个人项目，借助 AI 独立开发","start":"2026.08","end":"2026.11","tags":["iOS","SwiftUI","AI 辅助开发","需求文档","测试迭代"],"summary":"聚会后 2–8 人面对面一次互传所有照片，原图画质，相同照片不重复传。","highlights":["针对聚会后照片分散在各人手机的痛点梳理需求，定义核心功能：2–8 人面对面一次互传全部照片、原图画质（含实况照片）、相同照片只传一次、本地点对点传输不经服务器、核对安全码后开始传输。","编写结构化需求文档（分层架构、设备发现、去重与传输调度规则）指导 AI 开发；设计多设备互传场景测试，用真机反复测试迭代，并制作产品主页与宣传视频。"],"links":[{"label":"产品主页","url":"https://sandglass-vic.github.io/PSync/"}]},{"name":"雅思大作文逻辑链","subtitle":"离线备考 iOS 应用","role":"个人项目，借助 AI 独立开发","start":"2026.09","end":"2026.09","tags":["iOS","SwiftUI","AI 辅助开发","内容结构化"],"summary":"离线题库收录 252 道雅思高频大作文题，每题含概念拆解、推荐立场、得分点和 4–7 步中英逻辑链。","highlights":["将 252 道雅思高频大作文题整理为结构化离线题库，每题含概念拆解、推荐立场、得分点和 4–7 步中英逻辑链；编写校验脚本检查每道题内容是否完整。","设计题目列表、中英详情、一键复制、收藏等功能，结合自己备考的使用体验多轮调整内容结构与表达。"],"links":[]}],"competitions":[{"title":"团队负责人","event":"第十四届全国大学生红色旅游创意策划大赛","start":"2024.04","end":"2024.07","highlights":["带队完成方案《红绿映照：长城景观智慧设计——喜峰口水下长城》，涵盖智慧旅游场景、研学产品体验与短视频营销传播策略。","负责市场与用户调研、核心策略与方案框架撰写。"],"award":"华北赛区二等奖（2024.07）"},{"title":"突出贡献","event":"校融媒体中心","start":"2022.10","end":"2022.10","highlights":["参与运营河北经贸大学官方微博（粉丝 18.6 万，累计转赞评 406.2 万），负责选题、内容策划与发布，结合热点与校园场景产出内容并复盘数据。","独立运营个人小红书账号，单篇最高阅读 4 万；个人微博长期输出随笔。"],"award":"校融媒体中心“突出贡献评选一等奖”"}],"honors":["河北省三好学生（2023–2024）","河北经贸大学一等奖学金（2023–2024）","留学 Offer：澳大利亚国立大学（QS 32）金融管理硕士","留学 Offer：曼彻斯特大学（QS 35）国际时尚零售硕士"],"courses":[{"group":"商科与运营","items":[{"name":"服务运营管理"},{"name":"数据管理"},{"name":"财务管理","score":96.2},{"name":"市场营销学","score":86.1},{"name":"经济学","score":88.5},{"name":"商法","score":95.1},{"name":"旅游数据统计实操","score":89.0}]},{"group":"传播与沟通","items":[{"name":"旅游形象设计与传播","score":97.1},{"name":"新闻摄影"},{"name":"旅游英语","score":98.5},{"name":"商务沟通与礼仪","score":92.0},{"name":"旅游跨文化交流","score":90.0}]}]},"en":{"basics":{"name":"SU Wanning","degree":"B.M. Tourism Management","school":"Hebei University of Economics and Business, School of Tourism","major":"Tourism Management","email":"3173524356@qq.com","portfolio":"https://sandglass-vic.github.io/ice-cv/","targetRoles":["Overseas Growth Marketing","Overseas Content Operations","Customer Success"]},"education":[{"school":"Hebei University of Economics and Business","college":"School of Tourism","major":"Tourism Management","degree":"Bachelor of Management","start":"2022.08","end":"2026.06","gpa":"85.37/100","rank":"5/52"}],"skills":[{"category":"AI Tools","detail":"Use ChatGPT, DeepSeek, Qianwen, Claude and other LLMs for content planning, bilingual copywriting, and research, and review and edit AI output; independently built 2 iOS apps and a personal portfolio website with AI."},{"category":"Overseas Content & Social Media","detail":"Ran accounts on Xiaohongshu, X, Instagram, and Weibo; write English posts; proficient in CapCut, Premiere Pro, and Photoshop; use performance data to refine topics, covers, and copy."},{"category":"Customer Communication & Data","detail":"Handled 200+ customer inquiries with 95%+ satisfaction; Excel for statistics and visualization; turn feedback and OTA reviews into actionable suggestions. Host at the SAIC Volkswagen booth, Shijiazhuang International Auto Show: client liaison, model presentation, visitor engagement."},{"category":"Language","detail":"IELTS 6.0 (Reading 7.0); CET-4 (447); Mandarin Grade 2A."}],"experience":[{"title":"AI New Media Operations Intern (Overseas)","company":"TAL Education (Xueersi)","start":"2026.01","end":"2026.03","highlights":["Independently launched and ran 3 accounts on Xiaohongshu, X, and Instagram targeting overseas Chinese parents and competition students; owned topics, bilingual copy, visuals, and posting with a consistent style and cadence; 85+ posts.","Top post reached 100k+ views; the 3 accounts totaled ~380k impressions and 1,000+ monthly engagements; reviewed post data weekly to iterate topics, covers, and messaging.","Used AI tools for topic breakdown, headlines, and English copy, then reviewed and edited drafts to fit each platform.","Built the funnel from content exposure to DMs, group joins, and advisor handoff; maintained a 200+-member user group and worked with advisors on lead follow-up."],"metrics":[{"label":"Accounts","value":"3"},{"label":"Posts","value":"85+"},{"label":"Top post views","value":"100k+"},{"label":"Total impressions","value":"~380k"},{"label":"Monthly engagements","value":"1,000+"},{"label":"User group","value":"200+"}]},{"title":"Travel Consultant (User Operations)","company":"Beijing CITS Huachen Travel Agency Co., Ltd.","start":"2024.06","end":"2024.08","highlights":["Handled 15–20 inquiries/day, 200+ in total, 95%+ satisfaction; drew user needs from frontline feedback and OTA reviews; 2 product and messaging suggestions adopted, lifting route inquiry conversion by ~15%.","Assisted in running customer WeChat groups: community perks, campaign copy, and repeat-purchase outreach and feedback collection, improving engagement and retention.","Documented user preferences and common questions into reusable messaging guidelines and service materials."],"metrics":[{"label":"Inquiries handled","value":"200+"},{"label":"Satisfaction","value":"95%+"},{"label":"Inquiry conversion lift","value":"~15%"}]}],"projects":[{"name":"PSync","subtitle":"Face-to-face group photo sharing iOS app","role":"Personal project, built with AI","start":"2026.08","end":"2026.11","tags":["iOS","SwiftUI","AI-assisted development","Product spec","Testing & iteration"],"summary":"2–8 people exchange all their photos face to face in one go, in original quality, with duplicates sent only once.","highlights":["Scoped the pain point of party photos scattered across phones; defined core features: 2–8 people exchange all photos at once, original quality (incl. Live Photos), duplicates sent once, local peer-to-peer transfer with no server, safety-code check before transfer.","Wrote a structured spec (layered architecture, device discovery, dedup and scheduling rules) to guide AI coding; designed multi-device test scenarios, iterated via on-device testing; made a product page and promo video."],"links":[{"label":"Product page","url":"https://sandglass-vic.github.io/PSync/"}]},{"name":"IELTS Essay Logic Chains","subtitle":"Offline IELTS writing study iOS app","role":"Personal project, built with AI","start":"2026.09","end":"2026.09","tags":["iOS","SwiftUI","AI-assisted development","Content structuring"],"summary":"An offline bank of 252 high-frequency IELTS Task 2 questions, each with concept breakdown, recommended stance, scoring points, and a 4–7-step bilingual logic chain.","highlights":["Structured 252 high-frequency IELTS Task 2 questions into an offline question bank, each with concept breakdown, recommended stance, scoring points, and a 4–7-step bilingual logic chain; wrote a validation script to check completeness.","Designed question list, bilingual detail view, one-tap copy, and favorites; iterated content through several rounds of self-use."],"links":[]}],"competitions":[{"title":"Team Leader","event":"14th National College Student Red Tourism Creative Planning Competition","start":"2024.04","end":"2024.07","highlights":["Led the proposal Red & Green Reflections: Smart Design of the Great Wall Landscape – Xifengkou Underwater Great Wall, covering smart-tourism scenarios, study-tour products, and short-video marketing.","Owned market and user research, core strategy, and the proposal framework."],"award":"North China Second Prize (Jul 2024)"},{"title":"Outstanding Contribution","event":"University Integrated Media Center","start":"2022.10","end":"2022.10","highlights":["Helped run the university's official Weibo (186k followers, 4.06M total interactions): topic selection, content planning, publishing, and data review.","Independently run personal Xiaohongshu account (single-post peak 40k views); regular essay writing on personal Weibo."],"award":"Integrated Media Center “Outstanding Contribution First Prize”"}],"honors":["Hebei Provincial Outstanding Student (2023–24)","Hebei Univ. of Economics and Business First-Class Scholarship (2023–24)","Offer: Australian National University (QS 32), Master of Financial Management","Offer: University of Manchester (QS 35), MSc International Fashion Retailing"],"courses":[{"group":"Business & Operations","items":[{"name":"Service Operations Management"},{"name":"Data Management"},{"name":"Financial Management","score":96.2},{"name":"Marketing","score":86.1},{"name":"Economics","score":88.5},{"name":"Commercial Law","score":95.1},{"name":"Tourism Data Statistics & Practice","score":89.0}]},{"group":"Communication","items":[{"name":"Tourism Image Design & Communication","score":97.1},{"name":"News Photography"},{"name":"Tourism English","score":98.5},{"name":"Business Communication & Etiquette","score":92.0},{"name":"Cross-cultural Communication in Tourism","score":90.0}]}]}}</script>
+
+<script src="assets/site.js"></script>
+<script>
+const DATA = JSON.parse(document.getElementById('resume-data').textContent);
+const { STATIC, REDUCE } = window.SITE;
+const CALM = STATIC || REDUCE;
+
+const ICON = {
+  globe: '<svg viewBox="0 0 24 24" fill="none" stroke="#5b9bff" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>',
+  spark: '<svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M12 7l1.2 2.8L16 11l-2.8 1.2L12 15l-1.2-2.8L8 11l2.8-1.2z"/></svg>',
+  chat: '<svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg>',
+  chart: '<svg viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="2"><path d="M4 19V5M4 19h16"/><path d="M8 15l3-4 3 2 5-6"/></svg>',
+  mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>',
+};
+
+const UI = {
+  zh: {
+    title: '粟琬宁 · 个人简历与作品集',
+    brandName: '粟琬宁', navResume: '简历', navIelts: '雅思逻辑链',
+    heroTag: '求职中 · 工作地点北京',
+    hello: '> hello, 我是',
+    name: '粟琬宁', altName: 'SU Wanning',
+    tagline: '做面向海外用户的内容运营，也能借助 AI 把想法做成可用的软件。',
+    rolesLab: '求职意向',
+    roles: ['海外市场增长（B2B 获客）', '海外内容运营', 'SaaS 客户成功 / 交付'],
+    btnPdf: '下载 PDF 简历', btnWorks: '查看作品',
+    bRank: '专业排名', bViewsVal: '10 万+', bViews: '单条最高浏览', bApps: '款 iOS 应用',
+    about: ['ABOUT', '关于我', '内容运营 × 用户沟通 × AI 做产品'],
+    intro: '我是粟琬宁，毕业于河北经贸大学旅游管理专业（GPA 85.37，排名 5/52）。在好未来（学而思）实习时，我面向海外华人家长从零运营小红书、X、Instagram 三个账号，发布图文 85+ 篇，单条最高浏览 10 万+。我还借助 AI 独立开发了两款 iOS 应用。',
+    spec: [['学校', '河北经贸大学 · 旅游学院'], ['专业', '旅游管理 · 管理学学士'], ['成绩', 'GPA 85.37/100 · 排名 5/52'], ['语言', '雅思 6.0（阅读 7.0）· CET-4 447'], ['意向', '海外市场增长 / 海外内容运营 / SaaS 客户成功'], ['地点', '北京']],
+    strengths: [
+      ['globe', '海外内容运营', '独立运营 3 个面向海外用户的账号并撰写英文帖子，三账号累计曝光约 38 万、月均互动 1000+。'],
+      ['spark', '借助 AI 做出产品', '从需求梳理、功能设计到测试迭代，借助 AI 独立完成 2 款 iOS 应用。'],
+      ['chat', '用户沟通与转化', '累计处理 200+ 组客户咨询、满意度 95%+，提出的话术优化建议使相关线路咨询转化率提升约 15%。'],
+      ['chart', '按数据复盘', '按周复盘内容数据，持续迭代选题、封面与话术。'],
+    ],
+    numbers: ['NUMBERS', '关键数据', '来自两段实习与在校成绩'],
+    stats: [
+      { n: 85, suf: '+', unit: ' 篇', label: '海外账号累计发布图文', src: '好未来（学而思）' },
+      { n: 10, unit: ' 万+', label: '单条内容最高浏览', src: '好未来（学而思）' },
+      { pre: '约 ', n: 38, unit: ' 万', label: '三账号累计曝光', src: '好未来（学而思）' },
+      { n: 1000, suf: '+', label: '月均互动', src: '好未来（学而思）' },
+      { n: 200, suf: '+', unit: ' 组', label: '累计处理客户咨询', src: '北京国旅华宸' },
+      { n: 95, suf: '%+', label: '客户满意度', src: '北京国旅华宸' },
+      { pre: '约 ', n: 15, suf: '%', label: '相关线路咨询转化率提升', src: '北京国旅华宸' },
+      { n: 5, suf: '/52', label: '专业排名 · GPA 85.37', src: '河北经贸大学' },
+    ],
+    experience: ['EXPERIENCE', '实习经历', '海外新媒体运营 · 用户运营'],
+    works: ['PORTFOLIO', '作品集', '借助 AI 独立开发的两款 iOS 应用，点击卡片查看完整作品页'],
+    workExtra: [
+      { href: 'psync/index.html', icon: 'psync/assets/icon.png', video: '含 1 分钟演示视频',
+        mini: [['2–8 人', '同时互传'], ['原图', '含实况照片'], ['P2P', '本地直传不经服务器']] },
+      { href: 'ielts/index.html', icon: 'ielts/assets/icon.png',
+        mini: [['252', '道高频大作文题'], ['2,698', '步中英逻辑链'], ['2,096', '组重点短语']] },
+    ],
+    goWork: '进入作品页',
+    campus: ['CAMPUS', '竞赛与校园', '策划、调研与新媒体运营'],
+    education: ['EDUCATION', '教育 · 荣誉 · 技能', ''],
+    gpa: 'GPA（百分制）', rank: '专业排名', honorsT: '荣誉与 Offer', skillsT: '技能与语言',
+    contact: ['CONTACT', '期待与你交流', '欢迎通过邮件联系我；完整简历（中英文各一页）可直接下载 PDF。'],
+    viewWorks: '查看作品',
+    foot: '© 2026 粟琬宁 · 本站借助 AI 设计搭建',
+  },
+  en: {
+    title: 'SU Wanning · Resume & Portfolio',
+    brandName: 'SU Wanning', navResume: 'Resume', navIelts: 'IELTS Logic Chain',
+    heroTag: 'Open to work · Beijing',
+    hello: "> hello, I'm",
+    name: 'SU Wanning', altName: '粟琬宁',
+    tagline: 'Overseas content operations, plus the ability to turn ideas into working apps with AI.',
+    rolesLab: 'Looking for',
+    roles: ['Overseas Growth Marketing (B2B)', 'Overseas Content Operations', 'SaaS Customer Success / Implementation'],
+    btnPdf: 'Download PDF Resume', btnWorks: 'View Projects',
+    bRank: 'Class rank', bViewsVal: '100k+', bViews: 'Top post views', bApps: 'iOS apps built',
+    about: ['ABOUT', 'About Me', 'Content × Customer communication × Shipping with AI'],
+    intro: "I'm SU Wanning, a Tourism Management graduate of Hebei University of Economics and Business (GPA 85.37, ranked 5/52). As an intern at TAL Education (Xueersi), I launched and ran three accounts on Xiaohongshu, X, and Instagram for overseas Chinese parents, publishing 85+ posts, with a top post reaching 100k+ views. I have also built two iOS apps on my own with AI. I'm looking to bring content, customer communication, and AI tools together in overseas growth or customer success.",
+    spec: [['School', 'Hebei Univ. of Economics and Business'], ['Degree', 'B.M. Tourism Management'], ['Grades', 'GPA 85.37/100 · Rank 5/52'], ['Language', 'IELTS 6.0 (Reading 7.0) · CET-4 447'], ['Target', 'Overseas growth / content ops / SaaS customer success'], ['Location', 'Beijing']],
+    strengths: [
+      ['globe', 'Overseas content operations', 'Ran 3 overseas-facing accounts and wrote English posts, reaching ~380k impressions and 1,000+ monthly engagements combined.'],
+      ['spark', 'Shipping products with AI', 'Took 2 iOS apps from requirements and feature design through testing and iteration, using AI as my development partner.'],
+      ['chat', 'Customer communication', 'Handled 200+ customer inquiries with 95%+ satisfaction; my messaging suggestions lifted route inquiry conversion by ~15%.'],
+      ['chart', 'Data-driven iteration', 'Reviewed content data weekly to refine topics, covers, and messaging.'],
+    ],
+    numbers: ['NUMBERS', 'By the Numbers', 'From two internships and university'],
+    stats: [
+      { n: 85, suf: '+', label: 'Posts on overseas accounts', src: 'TAL Education' },
+      { n: 100, suf: 'k+', label: 'Top post views', src: 'TAL Education' },
+      { pre: '~', n: 380, suf: 'k', label: 'Total impressions, 3 accounts', src: 'TAL Education' },
+      { n: 1000, suf: '+', label: 'Monthly engagements', src: 'TAL Education' },
+      { n: 200, suf: '+', label: 'Customer inquiries handled', src: 'Beijing CITS Huachen' },
+      { n: 95, suf: '%+', label: 'Customer satisfaction', src: 'Beijing CITS Huachen' },
+      { pre: '~', n: 15, suf: '%', label: 'Route inquiry conversion lift', src: 'Beijing CITS Huachen' },
+      { n: 5, suf: '/52', label: 'Class rank · GPA 85.37', src: 'HUEB' },
+    ],
+    experience: ['EXPERIENCE', 'Internships', 'Overseas social media · User operations'],
+    works: ['PORTFOLIO', 'Projects', 'Two iOS apps I built on my own with AI. Click a card for the full project page (in Chinese).'],
+    workExtra: [
+      { href: 'psync/index.html', icon: 'psync/assets/icon.png', video: '1-min demo video',
+        mini: [['2–8', 'people at once'], ['Original', 'incl. Live Photos'], ['P2P', 'local, no server']] },
+      { href: 'ielts/index.html', icon: 'ielts/assets/icon.png',
+        mini: [['252', 'Task 2 questions'], ['2,698', 'bilingual chain steps'], ['2,096', 'key phrase pairs']] },
+    ],
+    goWork: 'Open project page',
+    campus: ['CAMPUS', 'Competitions & Campus', 'Planning, research, and social media'],
+    education: ['EDUCATION', 'Education · Honors · Skills', ''],
+    gpa: 'GPA (out of 100)', rank: 'Class rank', honorsT: 'Honors & Offers', skillsT: 'Skills & Languages',
+    contact: ['CONTACT', "Let's talk", 'Feel free to reach me by email. The full resume (one page each in Chinese and English) is available as a PDF.'],
+    viewWorks: 'View Projects',
+    foot: '© 2026 SU Wanning · Site designed and built with AI',
+  },
+};
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const range = (a, b) => a === b ? a : `${a} – ${b}`;
+const head = (no, [eb, t, sub]) => `<div class="sec-head reveal"><div class="eyebrow"><span class="no">${no}</span>${eb}</div><h2>${esc(t)}</h2>${sub ? `<p>${esc(sub)}</p>` : ''}</div>`;
+const fmt = (n, lang) => n >= 1000 ? n.toLocaleString('en-US') : String(n);
+const $ = id => document.getElementById(id);
+
+function render(lang) {
+  const u = UI[lang], d = DATA[lang];
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+  document.title = u.title;
+  document.querySelectorAll('[data-t]').forEach(el => { if (u[el.dataset.t] != null) el.textContent = u[el.dataset.t]; });
+  document.querySelectorAll('#langBtn b').forEach(b => b.classList.toggle('on', b.dataset.l === lang));
+
+  $('roles').innerHTML = `<span class="lab">${esc(u.rolesLab)} ›</span>` + u.roles.map(r => `<span class="r">${esc(r)}</span>`).join('');
+  const e0 = d.education[0];
+  $('eduLine').innerHTML = `<span>${esc(e0.school)}</span><span>${esc(d.basics.degree)}</span><span>${range(e0.start, e0.end)}</span>`;
+
+  $('about').innerHTML = `<div class="wrap">${head('01', u.about)}
+    <div class="about">
+      <div class="intro glass glow reveal">
+        <p>${esc(u.intro)}</p>
+        <div class="spec"><div class="dots"><i></i><i></i><i></i></div>${u.spec.map(([k, v]) => `<div class="row"><span class="k">${esc(k)}:</span><span class="v">${esc(v)}</span></div>`).join('')}</div>
+      </div>
+      <div class="strengths">${u.strengths.map(([ic, t, p], i) => `<div class="str glass glow reveal"><div class="ic">${ICON[ic]}</div><div class="no">0${i + 1}</div><h3>${esc(t)}</h3><p>${esc(p)}</p></div>`).join('')}</div>
+    </div></div>`;
+
+  $('numbers').innerHTML = `<div class="wrap">${head('02', u.numbers)}
+    <div class="nums">${u.stats.map(s => `<div class="num glass glow reveal"><b class="grad-text">${esc(s.pre || '')}<span class="cnt" data-n="${s.n}">${fmt(CALM ? s.n : 0)}</span>${esc(s.suf || '')}${s.unit ? `<small>${esc(s.unit)}</small>` : ''}</b><span>${esc(s.label)}</span><span class="src">// ${esc(s.src)}</span></div>`).join('')}</div></div>`;
+
+  $('experience').innerHTML = `<div class="wrap">${head('03', u.experience)}
+    <div class="tl" id="tl"><div class="rail"><i id="tlFill"></i></div>
+    ${d.experience.map(x => `<article class="job glass glow reveal"><span class="dot"></span>
+      <div class="job-top"><div><h3>${esc(x.title)}</h3><div class="co">${esc(x.company)}</div></div><span class="date">${range(x.start, x.end)}</span></div>
+      <ul>${x.highlights.map(h => `<li>${esc(h)}</li>`).join('')}</ul>
+      <div class="metrics">${x.metrics.map(m => `<span>${esc(m.label)}<b>${esc(m.value)}</b></span>`).join('')}</div>
+    </article>`).join('')}</div></div>`;
+
+  $('works').innerHTML = `<div class="wrap">${head('04', u.works)}
+    <div class="works">${d.projects.map((p, i) => {
+      const x = u.workExtra[i];
+      const vis = i === 0
+        ? `<div class="vis vis-psync"><img class="poster" src="psync/promo/poster.jpg" alt="PSync" loading="lazy"><span class="play">▶ ${esc(x.video)}</span></div>`
+        : `<div class="vis vis-ielts">${['detail-chain', 'home-expanded', 'detail-bilingual'].map(n => `<div class="ph"><img src="ielts/assets/${n}.jpg" alt="" loading="lazy"></div>`).join('')}</div>`;
+      return `<a class="work glass glow reveal" href="${x.href}">${vis}
+        <div class="body">
+          <div class="ttl"><img src="${x.icon}" alt=""><div><h3>${esc(p.name)}</h3><div class="subt">${esc(p.subtitle)}</div></div></div>
+          <div class="meta">${range(p.start, p.end)} · ${esc(p.role)}</div>
+          <p class="sum">${esc(p.summary)}</p>
+          <div class="mini">${x.mini.map(([b, s]) => `<div><b class="grad-text">${esc(b)}</b><span>${esc(s)}</span></div>`).join('')}</div>
+          <div class="tags">${p.tags.map(t => `<span>${esc(t)}</span>`).join('')}</div>
+          <span class="go">${esc(u.goWork)} <i>→</i></span>
+        </div></a>`;
+    }).join('')}</div></div>`;
+
+  $('campus').innerHTML = `<div class="wrap">${head('05', u.campus)}
+    <div class="camp">${d.competitions.map(c => `<div class="comp glass glow reveal">
+      <div class="job-top"><span class="role">${esc(c.title).toUpperCase()}</span><span class="date">${range(c.start, c.end)}</span></div>
+      <h3>${esc(c.event)}</h3>
+      <ul>${c.highlights.map(h => `<li>${esc(h)}</li>`).join('')}</ul>
+      <span class="award">🏆 ${esc(c.award)}</span>
+    </div>`).join('')}</div></div>`;
+
+  $('education').innerHTML = `<div class="wrap">${head('06', u.education)}
+    <div class="edu-grid">
+      <div class="edu glass glow reveal">
+        <div class="edu-head"><div><h3>${esc(e0.school)}</h3><div class="sub">${esc(e0.college)} · ${esc(e0.major)} · ${esc(e0.degree)}</div></div><span class="date">${range(e0.start, e0.end)}</span></div>
+        <div class="score"><div><b class="grad-text">${esc(e0.gpa)}</b><span>${esc(u.gpa)}</span></div><div><b class="grad-text">${esc(e0.rank)}</b><span>${esc(u.rank)}</span></div></div>
+        ${d.courses.map(g => `<div class="cgroup"><h4>// ${esc(g.group)}</h4><div class="courses">${g.items.map(c => `<span>${esc(c.name)}${c.score != null ? `<b>${c.score.toFixed(1)}</b>` : ''}</span>`).join('')}</div></div>`).join('')}
+      </div>
+      <div class="honors glass glow reveal"><h3>${esc(u.honorsT)}</h3><ul>${d.honors.map(h => `<li><i>${/offer/i.test(h) ? '🎓' : '🏅'}</i><span>${esc(h)}</span></li>`).join('')}</ul></div>
+    </div>
+    <div class="skills">${d.skills.map(s => `<div class="skill glass glow reveal"><h4><i></i>${esc(s.category)}</h4><p>${esc(s.detail)}</p></div>`).join('')}</div>
+  </div>`;
+
+  $('contact').innerHTML = `<div class="wrap reveal"><div class="eyebrow"><span class="no">07</span>${u.contact[0]}</div>
+    <h2>${esc(u.contact[1])}</h2><p>${esc(u.contact[2])}</p>
+    <a class="mail" href="mailto:${esc(d.basics.email)}">${ICON.mail}${esc(d.basics.email)}</a>
+    <div class="cta"><a class="btn btn-main" href="assets/SuWanning_Resume.pdf" download="粟琬宁_简历_SuWanning_Resume.pdf">${esc(u.btnPdf)}</a><a class="btn btn-ghost" href="#works">${esc(u.viewWorks)} →</a></div></div>`;
+
+  bindCounters();
+  SITE.reveal(document, rendered);
+  rendered = true;
+  typeTagline(u.tagline);
+  updateRail();
+}
+
+/* ---------- 数字滚动 ---------- */
+function bindCounters() {
+  document.querySelectorAll('.num').forEach(card => card.addEventListener('reveal', () => {
+    const el = card.querySelector('.cnt'), to = +el.dataset.n;
+    if (CALM || el.dataset.done) { el.textContent = fmt(to); return; }
+    el.dataset.done = 1;
+    const t0 = performance.now(), dur = 1500;
+    const tick = now => {
+      const k = Math.min(1, (now - t0) / dur);
+      el.textContent = fmt(Math.round(to * (1 - Math.pow(1 - k, 3))));
+      if (k < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }, { once: true }));
+}
+
+/* ---------- 打字机 ---------- */
+let typeTimer;
+function typeTagline(text) {
+  const el = $('typed');
+  clearTimeout(typeTimer);
+  if (CALM) { el.textContent = text; return; }
+  const chars = [...text];
+  let i = 0;
+  el.textContent = '';
+  const step = () => {
+    el.textContent = chars.slice(0, ++i).join('');
+    if (i < chars.length) typeTimer = setTimeout(step, /[，。,.]/.test(chars[i - 1]) ? 260 : (chars.length > 50 ? 32 : 70));
+  };
+  typeTimer = setTimeout(step, 500);
+}
+
+/* ---------- 时间轴进度 ---------- */
+function updateRail() {
+  const tl = $('tl'), fill = $('tlFill');
+  if (!tl) return;
+  if (STATIC) { fill.style.height = '100%'; return; }
+  const r = tl.getBoundingClientRect();
+  const k = Math.max(0, Math.min(1, (innerHeight * .65 - r.top) / r.height));
+  fill.style.height = (k * 100) + '%';
+}
+addEventListener('scroll', updateRail, { passive: true });
+
+/* ---------- 语言 ---------- */
+let rendered = false;
+const qsLang = (location.search.match(/[?&]lang=(zh|en)\b/) || [])[1];
+let LANG = qsLang || (() => { try { return localStorage.getItem('lang'); } catch (e) { return null; } })() || 'zh';
+if (!UI[LANG]) LANG = 'zh';
+render(LANG);
+$('langBtn').addEventListener('click', () => {
+  LANG = LANG === 'zh' ? 'en' : 'zh';
+  try { localStorage.setItem('lang', LANG); } catch (e) {}
+  render(LANG);
+});
+
+/* ---------- 粒子连线背景 ---------- */
+(function net() {
+  const cv = $('net'), ctx = cv.getContext('2d');
+  let W, H, dpr, pts = [], mouse = { x: -1e4, y: -1e4 }, raf;
+  function size() {
+    dpr = Math.min(2, devicePixelRatio || 1);
+    W = innerWidth; H = innerHeight;
+    cv.width = W * dpr; cv.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const n = Math.round(Math.min(90, W * H / 16000));
+    pts = Array.from({ length: n }, () => ({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35, r: Math.random() * 1.6 + .6 }));
+  }
+  function frame() {
+    ctx.clearRect(0, 0, W, H);
+    const D = 130;
+    for (const p of pts) {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > W) p.vx *= -1;
+      if (p.y < 0 || p.y > H) p.vy *= -1;
+    }
+    for (let i = 0; i < pts.length; i++) {
+      const a = pts[i];
+      for (let j = i + 1; j < pts.length; j++) {
+        const b = pts[j], dx = a.x - b.x, dy = a.y - b.y, dd = dx * dx + dy * dy;
+        if (dd < D * D) {
+          ctx.strokeStyle = `rgba(110,150,255,${(1 - Math.sqrt(dd) / D) * .28})`;
+          ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+        }
+      }
+      const mx = a.x - mouse.x, my = a.y - mouse.y, md = mx * mx + my * my;
+      if (md < 180 * 180) {
+        ctx.strokeStyle = `rgba(34,211,238,${(1 - Math.sqrt(md) / 180) * .55})`;
+        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
+      }
+      ctx.fillStyle = 'rgba(150,185,255,.75)';
+      ctx.beginPath(); ctx.arc(a.x, a.y, a.r, 0, 6.283); ctx.fill();
+    }
+  }
+  function loop() { frame(); raf = requestAnimationFrame(loop); }
+  size();
+  if (CALM) { frame(); addEventListener('resize', () => { size(); frame(); }); return; }
+  addEventListener('resize', size);
+  addEventListener('pointermove', e => { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
+  document.addEventListener('pointerleave', () => { mouse.x = mouse.y = -1e4; });
+  document.addEventListener('visibilitychange', () => { cancelAnimationFrame(raf); if (!document.hidden) loop(); });
+  loop();
+})();
+</script>
+</body>
+</html>
