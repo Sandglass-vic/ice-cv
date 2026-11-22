@@ -19,7 +19,6 @@
 index.html            简历首页（简历数据内联在页面中，支持 ?lang=en、?static）
 assets/               共享资源
   site.css / site.js  三个页面共用的导航、按钮、卡片、页脚样式与交互
-  photo.jpg           照片
   SuWanning_Resume.pdf / 粟琬宁_简历.pdf   PDF 简历（中英文各一页）
   favicon.svg / og.jpg
 psync/                PSync 作品页（index.html、assets/ 截图、promo/ 宣传视频与封面）
