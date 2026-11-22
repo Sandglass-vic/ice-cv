@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>雅思大作文逻辑链 · 把思路拆成可背的步骤 | 粟琬宁作品集</title>
+<title>雅思大作文逻辑链：把思路拆成可背的步骤 | 粟琬宁作品集</title>
 <meta name="description" content="雅思大作文逻辑链：252 道高频大作文题，每题含概念拆解、推荐立场、得分点和 4–7 步中英逻辑链，离线可用的 iOS App。粟琬宁借助 AI 独立开发。">
-<meta name="theme-color" content="#060914">
+<meta name="theme-color" content="#FFFFFF">
 <meta property="og:type" content="website">
-<meta property="og:title" content="雅思大作文逻辑链 · IELTS Logic Chain">
-<meta property="og:description" content="252 道高频题，每题一条能背下来的中英逻辑链。粟琬宁作品集 · iOS 应用">
+<meta property="og:title" content="雅思大作文逻辑链 | IELTS Logic Chain">
+<meta property="og:description" content="252 道高频题，每题一条能背下来的中英逻辑链。粟琬宁作品集中的 iOS 应用。">
 <meta property="og:url" content="https://sandglass-vic.github.io/ice-cv/ielts/">
 <meta property="og:image" content="https://sandglass-vic.github.io/ice-cv/ielts/assets/detail-bilingual.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -16,219 +16,130 @@
 <link rel="stylesheet" href="../assets/site.css">
 <script>if (/[?&]static\b/.test(location.search)) document.documentElement.classList.add('static');</script>
 <style>
-  /* 变量、导航、按钮、卡片、页脚见 ../assets/site.css */
-  img { display: block; max-width: 100%; }
+  /* 通用变量与组件见 ../assets/site.css，这里只写本页布局 */
+  ol.flow, ol.chain { list-style: none; }
 
-  /* ========== hero ========== */
-  .hero { position: relative; padding: calc(var(--top-h) + 76px) 0 90px; overflow: hidden; }
-  .hero::before {
-    content: ""; position: absolute; inset: 0;
-    background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size: 56px 56px; mask-image: radial-gradient(ellipse at 50% 30%, #000 20%, transparent 70%);
-    -webkit-mask-image: radial-gradient(ellipse at 50% 30%, #000 20%, transparent 70%); opacity: .5;
+  /* ---------- 头部 ---------- */
+  .hero { padding: 64px 0 40px; }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: center; }
+  .app-id { display: flex; align-items: center; gap: 16px; }
+  .app-id img { width: 56px; height: 56px; border-radius: 12px; border: 1px solid var(--line); flex: none; }
+  .hero h1 { font-size: var(--fs-name); line-height: 1.2; letter-spacing: .5px; }
+  .hero h1 .alt { display: block; font-size: 17px; font-weight: 400; color: var(--muted); letter-spacing: 0; margin-top: 2px; }
+  .lead { margin-top: 20px; font-size: 17px; max-width: 520px; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 2px 18px; margin-top: 12px; color: var(--muted); font-size: var(--fs-sm); }
+  .hero .btns { margin-top: 26px; }
+  .hero-phones { display: flex; gap: 16px; align-items: flex-start; }
+  .hero-phones .phone { width: 140px; }
+  .hero .metric-row { margin-top: 48px; }
+
+  /* ---------- 为什么做 ---------- */
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; }
+  .compare h3 { font-size: 16px; padding-bottom: 12px; }
+  .compare h3.muted { color: var(--muted); }
+  .compare li { padding: 12px 0; border-top: 1px solid var(--line); }
+  .compare li:last-child { border-bottom: 1px solid var(--line); }
+  .compare .bad li { color: var(--muted); }
+  .flow-t { margin-top: 44px; font-size: 15px; color: var(--ink); font-weight: 600; }
+  .flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); margin-top: 12px; border-top: 1px solid var(--line); counter-reset: f; }
+  .flow li { padding: 14px 16px 4px; font-size: 15px; color: var(--ink); counter-increment: f; }
+  .flow li:first-child { padding-left: 0; }
+  .flow li + li { border-left: 1px solid var(--line); }
+  .flow li::before { content: counter(f); display: block; color: var(--muted); font-size: var(--fs-xs); font-variant-numeric: tabular-nums; }
+
+  /* ---------- 核心功能：编号两栏 ---------- */
+  .feats { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; counter-reset: ft; }
+  .feats li { display: grid; grid-template-columns: 32px minmax(0, 1fr); padding: 20px 0; border-top: 1px solid var(--line); counter-increment: ft; }
+  .feats li:nth-last-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .feats li::before { content: counter(ft, decimal-leading-zero); color: var(--muted); font-size: var(--fs-sm); font-variant-numeric: tabular-nums; padding-top: 1px; }
+  .feats h3 { font-size: 16px; }
+  .feats p { margin-top: 4px; font-size: 15px; }
+
+  /* ---------- 逻辑链演示 ---------- */
+  .demo { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 56px; align-items: start; }
+  .q { position: sticky; top: calc(var(--top-h) + 24px); }
+  .q .tags { margin-bottom: 14px; }
+  .q h3 { font-size: 17px; line-height: 1.6; }
+  .q .zh { color: var(--muted); font-size: var(--fs-sm); margin-top: 8px; }
+  .qblock { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 15px; }
+  .qblock h4 { font-size: var(--fs-sm); color: var(--ink); margin-bottom: 8px; }
+  .qblock p + p, .qblock .tags + p { margin-top: 10px; }
+  .qblock ol { padding-left: 20px; }
+  .qblock ol li { margin-top: 4px; }
+
+  .ctrl { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+  .seg { display: inline-flex; border: 1px solid var(--line-strong); border-radius: var(--r); overflow: hidden; background: var(--bg); }
+  .seg button { height: 34px; padding: 0 14px; font-size: var(--fs-sm); color: var(--text); transition: color .2s, background-color .2s; }
+  .seg button + button { border-left: 1px solid var(--line-strong); }
+  .seg button:hover { color: var(--ink); }
+  .seg button.on { background: var(--accent-bg); color: var(--accent); font-weight: 500; }
+  .para-meta { margin: 18px 0 22px; }
+  .chain { border-left: 1px solid var(--line-strong); margin-left: 11px; counter-reset: s; }
+  .chain li { position: relative; padding: 0 0 22px 28px; counter-increment: s; }
+  .chain li:last-child { padding-bottom: 0; }
+  .chain li::before {
+    content: counter(s); position: absolute; left: -12px; top: 1px; width: 23px; height: 23px;
+    display: flex; align-items: center; justify-content: center; border-radius: var(--r-sm);
+    background: var(--bg); border: 1px solid var(--line-strong); color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums;
   }
-  .orb { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .55; animation: float 12s ease-in-out infinite; }
-  @keyframes float { 0%,100% { transform: translate(0,0); } 50% { transform: translate(30px,-30px); } }
-  .hero .wrap { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; }
-  .tag {
-    display: inline-block; padding: 6px 14px; border-radius: 999px; font-size: 14px; color: var(--cyan);
-    border: 1px solid rgba(34, 211, 238, .35); background: rgba(34, 211, 238, .08); margin-bottom: 22px;
-  }
-  .hero h1 { font-size: 60px; line-height: 1.15; font-weight: 800; letter-spacing: -1px; }
-  .hero p.lead { font-size: 19px; color: var(--muted); margin: 22px 0 36px; max-width: 540px; }
-  .cta { display: flex; gap: 14px; flex-wrap: wrap; }
-  .stats { display: flex; gap: 40px; margin-top: 48px; }
-  .stats b { display: block; font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; }
-  .stats span { font-size: 14px; color: var(--muted); }
-
-  /* ========== phone（真实截图外框） ========== */
-  .stage { position: relative; display: flex; justify-content: center; }
-  .stage::before {
-    content: ""; position: absolute; width: 380px; height: 380px; top: 50%; left: 50%; transform: translate(-50%,-50%);
-    background: radial-gradient(circle, rgba(59,130,255,.45), transparent 65%); filter: blur(20px);
-  }
-  .phone {
-    position: relative; width: 300px; aspect-ratio: 414 / 900; border-radius: 48px; padding: 10px;
-    background: linear-gradient(145deg, #2a3045, #0d1020); box-shadow: 0 40px 80px rgba(0,0,0,.6), inset 0 0 0 1px rgba(255,255,255,.08);
-  }
-  .phone .screen { position: relative; width: 100%; height: 100%; border-radius: 39px; overflow: hidden; background: #f2fafa; }
-  .phone .screen img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .8s; }
-  .phone .screen img.on { opacity: 1; }
-  .phone-cap { position: absolute; bottom: -38px; left: 0; right: 0; text-align: center; font-size: 13px; color: var(--muted); }
-  .dots { display: flex; gap: 6px; justify-content: center; margin-top: 4px; }
-  .dots i { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.2); transition: all .3s; }
-  .dots i.on { width: 18px; border-radius: 3px; background: var(--cyan); }
-
-  /* ========== sections ========== */
-  section { padding: 110px 0; position: relative; }
-  .sec-head { text-align: center; max-width: 720px; margin: 0 auto 60px; }
-  .eyebrow { color: var(--cyan); font-size: 14px; font-weight: 600; letter-spacing: 3px; }
-  .sec-head h2 { font-size: 44px; font-weight: 800; margin-top: 12px; line-height: 1.25; }
-  .sec-head p { color: var(--muted); font-size: 18px; margin-top: 16px; }
-  .alt { background: linear-gradient(180deg, transparent, var(--bg2) 20%, var(--bg2) 80%, transparent); }
-
-  /* ========== why：痛点 vs 方案 ========== */
-  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-  .col { padding: 36px; }
-  .col h3 { font-size: 22px; margin-bottom: 22px; display: flex; align-items: center; gap: 10px; }
-  .col li { list-style: none; display: flex; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); font-size: 16px; }
-  .col li:first-child { border-top: none; }
-  .col.bad li::before { content: "✕"; color: #ff6b6b; font-weight: 700; }
-  .col.good { border-color: rgba(59,130,255,.45); box-shadow: 0 0 60px rgba(59,130,255,.12) inset; }
-  .col.good li::before { content: "✓"; color: var(--cyan); font-weight: 700; }
-  .flow { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; margin-top: 40px; font-size: 15px; }
-  .flow span { padding: 8px 16px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255,255,255,.04); }
-  .flow em { font-style: normal; color: var(--cyan); }
-
-  /* ========== features ========== */
-  .feats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .feat { padding: 34px 28px; transition: transform .3s, border-color .3s; }
-  .feat:hover { transform: translateY(-6px); border-color: rgba(59,130,255,.5); }
-  .feat .ic { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 22px; }
-  .feat .ic svg { width: 28px; height: 28px; }
-  .feat h3 { font-size: 21px; }
-  .feat p { color: var(--muted); font-size: 15px; margin-top: 8px; }
-
-  /* ========== demo：真实题目逻辑链 ========== */
-  .demo { display: grid; grid-template-columns: .85fr 1.15fr; gap: 28px; align-items: start; }
-  .qcard { padding: 30px; position: sticky; top: calc(var(--top-h) + 24px); }
-  .qno { display: inline-block; font: 700 12px/1 "SF Mono", Menlo, monospace; letter-spacing: 2px; color: var(--cyan); padding: 7px 12px; border-radius: 999px; background: rgba(34,211,238,.1); }
-  .qcard h3 { font-size: 19px; line-height: 1.5; margin: 16px 0 8px; }
-  .qcard .zh { color: var(--muted); font-size: 14px; }
-  .qblock { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
-  .qblock h4 { font-size: 13px; letter-spacing: 1px; color: var(--cyan); margin-bottom: 10px; }
-  .qblock p, .qblock li { font-size: 14px; color: #cdd5ee; }
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-  .chips span { font-size: 13px; padding: 5px 12px; border-radius: 999px; background: rgba(59,130,255,.14); color: #b9d0ff; }
-  .qblock ol { padding-left: 18px; }
-  .qblock ol li { margin: 4px 0; }
-
-  .chain-box { padding: 28px 28px 32px; }
-  .ctrl { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
-  .seg { display: inline-flex; padding: 4px; border-radius: 999px; background: rgba(255,255,255,.05); border: 1px solid var(--line); }
-  .seg button { border: 0; background: none; color: var(--muted); font: inherit; font-size: 14px; padding: 7px 16px; border-radius: 999px; cursor: pointer; transition: all .25s; }
-  .seg button.on { background: var(--grad); color: #fff; font-weight: 600; }
-  .para-meta { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; font-size: 13px; }
-  .para-meta span { padding: 5px 12px; border-radius: 8px; border: 1px solid var(--line); color: var(--muted); }
-  .para-meta b { color: var(--text); font-weight: 600; }
-
-  .chain { position: relative; padding-left: 58px; }
-  .chain .rail { position: absolute; left: 21px; top: 22px; bottom: 22px; width: 2px; background: rgba(255,255,255,.08); border-radius: 2px; }
-  .chain .rail i { position: absolute; left: 0; top: 0; width: 100%; height: 0; background: var(--grad); border-radius: 2px; transition: height .6s ease; box-shadow: 0 0 12px rgba(34,211,238,.6); }
-  .node { position: relative; padding: 16px 20px; margin-bottom: 14px; border-radius: 16px; border: 1px solid var(--line); background: rgba(255,255,255,.03);
-    opacity: 0; transform: translateX(16px); transition: opacity .5s, transform .5s, border-color .5s; }
-  .node.in { opacity: 1; transform: none; }
-  .node.last { border-color: rgba(34,211,238,.4); background: linear-gradient(160deg, rgba(59,130,255,.12), rgba(34,211,238,.04)); }
-  .node .n { position: absolute; left: -58px; top: 14px; width: 44px; height: 44px; border-radius: 14px; display: flex; align-items: center; justify-content: center;
-    font-weight: 800; font-size: 16px; background: var(--bg2); border: 1px solid var(--line); color: var(--muted); transition: all .5s; }
-  .node.in .n { background: var(--grad); color: #fff; border-color: transparent; box-shadow: 0 6px 20px rgba(59,130,255,.35); }
-  .node .en { font-size: 15.5px; line-height: 1.6; }
-  .node .zh { font-size: 14px; color: var(--muted); margin-top: 6px; }
-  .node .hl { color: #7cc4ff; font-weight: 600; }
-  .node .zh .hl { color: #5eead4; }
+  .chain li.last::before { border-color: var(--accent); color: var(--accent); }
+  .chain .en { color: var(--ink); }
+  .chain .zh { color: var(--muted); font-size: 15px; margin-top: 4px; }
+  .chain .hl { color: var(--accent); font-weight: 500; }
   .chain.en-only .zh, .chain.zh-only .en { display: none; }
-  .chain.zh-only .zh { margin-top: 0; color: var(--text); font-size: 15.5px; }
-  .replay { margin-top: 6px; font-size: 13px; color: var(--muted); background: none; border: 0; cursor: pointer; }
-  .replay:hover { color: var(--cyan); }
+  .chain.zh-only .zh { margin-top: 0; color: var(--ink); font-size: var(--fs-body); }
 
-  /* ========== gallery ========== */
-  .gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px 22px; }
-  .shot { text-align: center; }
-  .shot .frame { border-radius: 30px; padding: 7px; background: linear-gradient(145deg, #2a3045, #0d1020); box-shadow: 0 24px 50px rgba(0,0,0,.5), inset 0 0 0 1px rgba(255,255,255,.08); transition: transform .35s; }
-  .shot:hover .frame { transform: translateY(-8px); }
-  .shot img { width: 100%; aspect-ratio: 414 / 900; object-fit: cover; border-radius: 24px; background: #f2fafa; }
-  .shot h4 { font-size: 16px; margin-top: 16px; }
-  .shot p { font-size: 13px; color: var(--muted); margin-top: 2px; }
-  .note { text-align: center; color: var(--muted); font-size: 13px; margin-top: 30px; }
+  /* ---------- 截图 ---------- */
+  .gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px 32px; }
+  .gallery figure { min-width: 0; }
+  .gallery .phone { width: 100%; max-width: 200px; }
+  .gallery figcaption { margin-top: 14px; font-size: 15px; color: var(--ink); font-weight: 600; }
+  .gallery figcaption span { display: block; font-weight: 400; color: var(--muted); font-size: var(--fs-sm); }
+  .note { margin-top: 32px; color: var(--muted); font-size: var(--fs-sm); }
 
-  /* ========== process ========== */
-  .pipe { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; position: relative; }
-  .pipe::before { content: ""; position: absolute; top: 31px; left: 10%; right: 10%; height: 2px; background: linear-gradient(90deg, rgba(59,130,255,.1), rgba(34,211,238,.6), rgba(59,130,255,.1)); }
-  .pstep { position: relative; padding: 0 6px; text-align: center; }
-  .pstep .no { width: 62px; height: 62px; margin: 0 auto 18px; border-radius: 18px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 20px;
-    background: var(--bg2); border: 1px solid rgba(59,130,255,.5); box-shadow: 0 0 30px rgba(59,130,255,.25); position: relative; }
-  .pstep h3 { font-size: 17px; }
-  .pstep p { font-size: 14px; color: var(--muted); margin-top: 6px; text-align: left; }
-  .pstep .num { display: block; font-size: 24px; font-weight: 800; margin-top: 10px; font-variant-numeric: tabular-nums; }
-  .pstep small { font-size: 12px; color: var(--muted); }
+  /* ---------- 开发过程 ---------- */
+  .entry p { margin-top: 6px; }
+  .sub-t { margin: 48px 0 16px; font-size: var(--fs-h3); }
+  .rows .bullets { margin-top: 0; }
+  .rows .bullets li:first-child { margin-top: 0; }
+  .fname { font-size: 14px; color: var(--ink); background: var(--bg-alt); border: 1px solid var(--line); border-radius: var(--r-sm); padding: 0 5px; }
 
-  .tech { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 60px; }
-  .tcard { padding: 28px; }
-  .tcard h3 { font-size: 18px; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-  .tcard h3 i { font-style: normal; font: 700 12px "SF Mono", Menlo, monospace; color: var(--cyan); }
-  .tcard li { list-style: none; font-size: 14px; color: #cdd5ee; padding: 7px 0; border-top: 1px dashed var(--line); }
-  .tcard li:first-child { border-top: 0; }
-  .tcard code { font: 12.5px "SF Mono", Menlo, monospace; color: #9ccaff; background: rgba(59,130,255,.12); padding: 1px 6px; border-radius: 5px; }
+  /* ---------- 收获 ---------- */
+  .learn { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; }
+  .learn article { padding: 22px 0; border-top: 1px solid var(--line); }
+  .learn article:nth-last-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .learn h3 { font-size: var(--fs-h3); }
+  .learn p { margin-top: 6px; }
+  .learn .tags { margin-top: 12px; }
 
-  /* ========== learnings ========== */
-  .learn { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  .lcard { padding: 30px 30px 30px 32px; display: flex; gap: 20px; }
-  .lcard .k { flex: none; width: 48px; height: 48px; border-radius: 14px; background: var(--grad); display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff; }
-  .lcard h3 { font-size: 19px; }
-  .lcard p { color: var(--muted); font-size: 15px; margin-top: 6px; }
-  .lcard .tagline { display: inline-block; margin-top: 12px; font-size: 12px; color: var(--cyan); border: 1px solid rgba(34,211,238,.3); border-radius: 999px; padding: 3px 10px; }
 
-  /* ========== final / footer ========== */
-  .final { text-align: center; padding: 120px 0; }
-  .final img { width: 96px; height: 96px; border-radius: 24px; margin: 0 auto; box-shadow: 0 20px 60px rgba(59,130,255,.4); }
-  .final h2 { font-size: 48px; font-weight: 800; margin: 26px 0 12px; }
-  .final p { color: var(--muted); font-size: 18px; margin-bottom: 34px; }
-
-  .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s, transform .8s; }
-  .reveal.in { opacity: 1; transform: none; }
-
-  /* ========== responsive ========== */
   @media (max-width: 960px) {
-    .hero .wrap, .demo { grid-template-columns: 1fr; }
-    .hero { padding: calc(var(--top-h) + 46px) 0 90px; text-align: center; }
-    .hero h1 { font-size: 42px; }
-    .hero p.lead { margin-left: auto; margin-right: auto; font-size: 17px; }
-    .cta, .stats { justify-content: center; }
-    .stats { gap: 28px; }
-    .feats, .tech { grid-template-columns: 1fr 1fr; }
-    .compare, .learn { grid-template-columns: 1fr; }
-    .gallery { grid-template-columns: repeat(3, 1fr); }
-    .qcard { position: static; }
-    .pipe { grid-template-columns: 1fr; gap: 0; }
-    .pipe::before { top: 0; bottom: 0; left: 30px; right: auto; width: 2px; height: auto; background: linear-gradient(180deg, rgba(59,130,255,.1), rgba(34,211,238,.6), rgba(59,130,255,.1)); }
-    .pstep { display: grid; grid-template-columns: 62px 1fr; gap: 0 18px; text-align: left; padding: 0 0 26px; }
-    .pstep .no { margin: 0; grid-row: span 3; }
-    section { padding: 80px 0; }
-    .sec-head h2 { font-size: 32px; }
-    .final h2 { font-size: 34px; }
+    .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+    .demo { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+    .q { position: static; }
+    .gallery { display: flex; overflow-x: auto; gap: 24px; margin: 0 calc(var(--gutter) * -1); padding: 4px var(--gutter) 24px; scroll-snap-type: x mandatory; scroll-padding: 0 var(--gutter); }
+    .gallery figure { flex: none; width: 168px; scroll-snap-align: start; }
+    .note { margin-top: 12px; }
   }
-  @media (max-width: 520px) {
-    .wrap { padding: 0 18px; }
-    .hero h1 { font-size: 34px; }
-    .stats { gap: 18px; }
-    .stats b { font-size: 22px; }
-    .stats span { font-size: 12px; }
-    .feats, .tech { grid-template-columns: 1fr; gap: 12px; }
-    .feat { padding: 22px 20px; display: grid; grid-template-columns: 44px 1fr; gap: 0 16px; border-radius: 18px; }
-    .feat .ic { width: 44px; height: 44px; border-radius: 12px; margin: 0; grid-row: span 2; }
-    .feat .ic svg { width: 22px; height: 22px; }
-    .feat h3 { font-size: 17px; }
-    .feat p { font-size: 14px; margin-top: 2px; }
-    .phone { width: 260px; }
-    .col, .qcard, .chain-box, .tcard { padding: 22px 18px; }
-    .chain { padding-left: 46px; }
-    .chain .rail { left: 16px; }
-    .node { padding: 13px 14px; }
-    .node .n { left: -46px; width: 34px; height: 34px; border-radius: 10px; font-size: 14px; }
-    .node .en { font-size: 14.5px; }
-    .gallery { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; margin: 0 -18px; padding: 10px 18px 20px; }
-    .shot { flex: none; width: 62%; scroll-snap-align: center; }
-    .lcard { padding: 22px 18px; gap: 14px; }
-    .lcard .k { width: 40px; height: 40px; border-radius: 12px; }
-    .sec-head h2 { font-size: 28px; }
-    .sec-head p { font-size: 16px; }
-  }
-  /* ?static：直接显示最终状态（用于截图 / 缩略图） */
-  .static .reveal, .static .node { transition: none !important; opacity: 1; transform: none; }
-  .static .chain .rail i, .static .node .n { transition: none; }
-  @media (prefers-reduced-motion: reduce) {
-    .orb { animation: none; }
-    .reveal, .node { transition: none; opacity: 1; transform: none; }
+  @media (max-width: 760px) {
+    .hero { padding: 36px 0 28px; }
+    .app-id img { width: 48px; height: 48px; border-radius: 11px; }
+    .lead { font-size: 16px; }
+    .hero .btns .btn { flex: 1 1 auto; }
+    .hero-phones { gap: 12px; }
+    .hero-phones .phone { width: calc((100% - 24px) / 3); max-width: 140px; }
+    .hero .metric-row { margin-top: 32px; }
+    .compare, .feats, .learn { grid-template-columns: minmax(0, 1fr); }
+    .compare .good { margin-top: 28px; }
+    .feats li:nth-last-child(2) { border-bottom: 0; }
+    .learn article:nth-last-child(2) { border-bottom: 0; }
+    .flow { grid-template-columns: minmax(0, 1fr); border-top: 0; }
+    .flow li, .flow li:first-child { display: grid; grid-template-columns: 32px minmax(0, 1fr); padding: 10px 0; border-top: 1px solid var(--line); }
+    .flow li + li { border-left: 0; }
+    .flow li:last-child { border-bottom: 1px solid var(--line); }
+    .flow li::before { font-size: var(--fs-sm); }
+    .gallery figure { width: 150px; }
+    .sub-t { margin-top: 36px; }
   }
 </style>
 </head>
@@ -236,14 +147,13 @@
 
 <nav class="site-nav">
   <div class="wrap nav-in">
-    <a class="s-brand" href="../index.html"><span class="mark">SW</span><span>粟琬宁<span class="sub"> · Portfolio</span></span></a>
+    <a class="s-brand" href="../index.html">粟琬宁</a>
     <div class="s-tabs">
       <a href="../index.html">简历</a>
-      <a href="../psync/index.html"><img src="../psync/assets/icon.png" alt="">PSync</a>
-      <a class="on" href="../ielts/index.html"><img src="../ielts/assets/icon.png" alt="">雅思逻辑链</a>
+      <a href="../psync/index.html">PSync</a>
+      <a class="on" href="../ielts/index.html">雅思逻辑链</a>
     </div>
   </div>
-  <div class="s-progress"></div>
 </nav>
 <div class="s-subnav">
   <div class="wrap">
@@ -252,48 +162,43 @@
   </div>
 </div>
 
-<header class="hero">
-  <div class="orb" style="width:520px;height:520px;background:#1d4ed8;left:-160px;top:-120px"></div>
-  <div class="orb" style="width:420px;height:420px;background:#0891b2;right:-120px;top:120px;animation-delay:-6s"></div>
+<header class="hero dots" id="top">
   <div class="wrap">
-    <div>
-      <span class="tag">iOS App · 雅思写作 Task 2 复习</span>
-      <h1>大作文没思路？<br><span class="grad-text">先背顺一条逻辑链。</span></h1>
-      <p class="lead">IELTS Logic Chain 把 252 道高频大作文题，逐题拆成「题目在问什么 → 选什么立场 → 每段怎样一步步推出结论」，配中英逐句对照。打开就能复习，不需要联网。</p>
-      <div class="cta">
-        <a class="btn btn-main" href="#demo">看一道真题怎么拆</a>
-        <a class="btn btn-ghost" href="#process">了解开发过程</a>
+    <div class="hero-grid">
+      <div>
+        <div class="app-id">
+          <img src="assets/icon.png" alt="雅思大作文逻辑链图标" width="56" height="56">
+          <h1>雅思大作文逻辑链<span class="alt">IELTS Logic Chain</span></h1>
+        </div>
+        <p class="lead">大作文没思路，先背顺一条逻辑链。App 把 252 道高频大作文题逐题拆开：题目在问什么，选什么立场，每段怎样一步步推出结论，并配中英逐句对照。打开就能复习，不需要联网。</p>
+        <div class="hero-meta"><span>iOS 17 App</span><span>SwiftUI</span><span class="tnum">2026.09</span><span>个人项目，借助 AI 独立开发</span></div>
+        <div class="btns">
+          <a class="btn btn-main" href="#demo">看一道真题怎么拆</a>
+          <a class="btn btn-ghost" href="../index.html">返回简历</a>
+        </div>
       </div>
-      <div class="stats">
-        <div><b class="grad-text" data-count="252">252</b><span>道高频大作文题</span></div>
-        <div><b class="grad-text" data-count="2698">2,698</b><span>步中英逻辑链</span></div>
-        <div><b class="grad-text" data-count="2096">2,096</b><span>组重点短语</span></div>
+      <div class="hero-phones">
+        <div class="phone"><img src="assets/home-expanded.jpg" alt="首页：学习进度与分类题库" width="414" height="900"></div>
+        <div class="phone"><img src="assets/detail.jpg" alt="题目详情：英文原题与概念拆解" width="414" height="900"></div>
+        <div class="phone"><img src="assets/detail-bilingual.jpg" alt="中英逐句对照的逻辑链" width="414" height="900"></div>
       </div>
     </div>
-    <div class="stage">
-      <div class="phone" id="heroPhone">
-        <div class="screen">
-          <img class="on" src="assets/home-expanded.jpg" alt="首页：学习进度与分类题库">
-          <img src="assets/detail.jpg" alt="题目详情：英文原题与概念拆解">
-          <img src="assets/detail-bilingual.jpg" alt="中英逐句对照的逻辑链">
-          <img src="assets/secrets.jpg" alt="写作秘籍解锁">
-        </div>
-        <div class="phone-cap"><span id="heroCap">首页 · 学习进度与 11 类题库</span><div class="dots" id="heroDots"><i class="on"></i><i></i><i></i><i></i></div></div>
-      </div>
+    <div class="metric-row">
+      <div><b>252</b><span>道高频大作文题</span></div>
+      <div><b>2,698</b><span>步中英逻辑链</span></div>
+      <div><b>2,096</b><span>组重点短语</span></div>
+      <div><b>离线</b><span>题库随 App 打包</span></div>
     </div>
   </div>
 </header>
 
-<section id="why">
+<main>
+<section id="why" class="section alt">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="eyebrow">WHY</div>
-      <h2>难的不是英语，是「写什么、怎么推」</h2>
-      <p>很多考生看范文能看懂，自己写却卡在第二句。缺的不是单词，而是一套可以复用的思考顺序。</p>
-    </div>
-    <div class="compare">
-      <div class="col bad glass reveal">
-        <h3>😩 常见的备考方式</h3>
+    <div class="sec-title"><h2>难的不是英语，是写什么、怎么推</h2><p>看范文能看懂，自己写却卡在第二句。缺的不是单词，而是一套可以复用的思考顺序。</p></div>
+    <div class="compare reveal">
+      <div class="bad">
+        <h3 class="muted">常见的备考方式</h3>
         <ul>
           <li>整篇背范文，换一道题就用不上</li>
           <li>观点只有一句话，写两句就没东西可说</li>
@@ -301,78 +206,57 @@
           <li>模板句堆得多，段落之间缺少因果推进</li>
         </ul>
       </div>
-      <div class="col good glass reveal">
-        <h3>✨ 用逻辑链复习</h3>
+      <div class="good">
+        <h3>用逻辑链复习</h3>
         <ul>
           <li>先拆概念、定立场，知道哪里最容易跑题</li>
-          <li>每段 4–7 步：观点 → 机制 → 结果 → 例子 → 回扣</li>
-          <li>每一步都有中英对照，关键短语高亮可收藏</li>
+          <li>每段 4–7 步，从观点、机制、结果、例子推到回扣</li>
+          <li>每一步都有中英对照，关键短语高亮、可收藏</li>
           <li>得分点逐条可检查，写完能自己判断有没有答偏</li>
         </ul>
       </div>
     </div>
-    <div class="flow reveal">
-      <span>题目真正问什么</span><em>→</em><span>概念拆成哪几块</span><em>→</em><span>推荐立场 & 理由</span><em>→</em><span>得分点</span><em>→</em><span>两段逻辑链</span>
-    </div>
+    <p class="flow-t">每道题的拆解顺序</p>
+    <ol class="flow reveal">
+      <li>题目真正问什么</li>
+      <li>概念拆成哪几块</li>
+      <li>推荐立场与理由</li>
+      <li>得分点</li>
+      <li>两段逻辑链</li>
+    </ol>
   </div>
 </section>
 
-<section id="features" class="alt">
+<section id="features" class="section">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="eyebrow">FEATURES</div>
-      <h2>每道题都按同一套顺序拆好</h2>
-      <p>App 只做一件事：让「有思路」这件事可以被练出来。</p>
-    </div>
-    <div class="feats">
-      <div class="feat glass reveal">
-        <div class="ic" style="background:rgba(59,130,255,.16)"><svg viewBox="0 0 24 24" fill="none" stroke="#5b9bff" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg></div>
-        <h3>概念拆解 + 推荐立场</h3><p>说清题目真正问什么，把核心词拆成 2–4 个维度，并给出一个两段都好展开的立场和段落安排。</p>
-      </div>
-      <div class="feat glass reveal">
-        <div class="ic" style="background:rgba(34,211,238,.16)"><svg viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="5" cy="6" r="2.5"/><circle cx="12" cy="12" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M7 7.5l3 3M14 13.5l3 3"/></svg></div>
-        <h3>4–7 步中英逻辑链</h3><p>每个主体段只论证一个中心，按观点自然展开，不强行凑步数；中文链与英文主体段一一对应。</p>
-      </div>
-      <div class="feat glass reveal">
-        <div class="ic" style="background:rgba(52,211,153,.16)"><svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><path d="M4 5h7v14H4zM13 5h7v14h-7z"/><path d="M6.5 9h2M6.5 12h2M15.5 9h2M15.5 12h2"/></svg></div>
-        <h3>中英逐句对照</h3><p>一键切换到逐句对照模式，英文和中文里的重点短语同步高亮，方便边看边学表达。</p>
-      </div>
-      <div class="feat glass reveal">
-        <div class="ic" style="background:rgba(251,191,36,.16)"><svg viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2"><path d="M6 3h12v18l-6-4-6 4z"/></svg></div>
-        <h3>收藏题目与词句</h3><p>题目可收藏并按分类归档；长按句子或短语，即可把中英双语素材存进自己的语言库。</p>
-      </div>
-      <div class="feat glass reveal">
-        <div class="ic" style="background:rgba(192,132,252,.16)"><svg viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="2"><path d="M4 19V5M4 19h16"/><path d="M8 15l3-4 3 2 5-6"/></svg></div>
-        <h3>进度追踪 + 写作秘籍</h3><p>每题可标记学习中 / 已掌握；每完成 30 篇解锁 1 份写作秘籍，共 8 份，从「六步链」到「例子工厂」。</p>
-      </div>
-      <div class="feat glass reveal">
-        <div class="ic" style="background:rgba(248,113,113,.16)"><svg viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 00-1-1H5a1 1 0 00-1 1v10a1 1 0 001 1h3"/></svg></div>
-        <h3>一键复制 · 离线 · 可备份</h3><p>整题内容一键复制去做笔记；题库随 App 打包，无需联网；学习记录可导出备份、重装后导入。</p>
-      </div>
-    </div>
+    <div class="sec-title"><h2>核心功能</h2><p>App 只做一件事：让「有思路」这件事可以被练出来。</p></div>
+    <ul class="feats reveal">
+      <li><div><h3>概念拆解与推荐立场</h3><p>说清题目真正问什么，把核心词拆成 2–4 个维度，并给出一个两段都好展开的立场和段落安排。</p></div></li>
+      <li><div><h3>4–7 步中英逻辑链</h3><p>每个主体段只论证一个中心，按观点自然展开，不强行凑步数；中文链与英文主体段一一对应。</p></div></li>
+      <li><div><h3>中英逐句对照</h3><p>一键切换到逐句对照模式，英文和中文里的重点短语同步高亮，方便边看边学表达。</p></div></li>
+      <li><div><h3>收藏题目与词句</h3><p>题目可收藏并按分类归档；长按句子或短语，即可把中英双语素材存进自己的语言库。</p></div></li>
+      <li><div><h3>进度追踪与写作秘籍</h3><p>每题可标记为学习中或已掌握；每完成 30 篇解锁 1 份写作秘籍，共 8 份，从「六步链」到「例子工厂」。</p></div></li>
+      <li><div><h3>一键复制，离线可用，可备份</h3><p>整题内容一键复制去做笔记；题库随 App 打包，无需联网；学习记录可导出备份，重装后导入。</p></div></li>
+    </ul>
   </div>
 </section>
 
-<section id="demo">
+<section id="demo" class="section">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="eyebrow">LIVE DEMO</div>
-      <h2>拆一道真题给你看</h2>
-      <p>以下内容直接取自 App 内置题库第 2 题，没有改动。</p>
-    </div>
+    <div class="sec-title"><h2>拆一道真题给你看</h2><p>以下内容直接取自 App 内置题库第 2 题，没有改动。</p></div>
     <div class="demo">
-      <div class="qcard glass reveal">
-        <span class="qno">QUESTION 2 · 媒体与广告</span>
+      <div class="q reveal">
+        <div class="tags"><span class="tag">第 2 题</span><span class="tag">媒体与广告</span></div>
         <h3>Nowadays, young people admire sports and media stars. Some people think they do not set good examples. Do you think this is a positive or negative development?</h3>
         <p class="zh">如今，年轻人崇拜体育明星和媒体明星。一些人认为他们没有树立良好的榜样。你认为这是积极还是消极的发展？</p>
         <div class="qblock">
           <h4>概念拆解</h4>
-          <div class="chips"><span>努力与自律</span><span>消费与自我评价</span><span>比较标准</span></div>
-          <p style="margin-top:10px">比较影响覆盖多少人、持续多久、能否控制或修复，而不是只各列一个好处和坏处。</p>
+          <div class="tags"><span class="tag">努力与自律</span><span class="tag">消费与自我评价</span><span class="tag">比较标准</span></div>
+          <p>比较影响覆盖多少人、持续多久、能否控制或修复，而不是只各列一个好处和坏处。</p>
         </div>
         <div class="qblock">
           <h4>推荐立场</h4>
-          <p>年轻人崇拜明星有时能获得努力的动力，但媒体更常放大消费和外貌标准，所以这一趋势<b style="color:#fff">总体偏负面</b>。</p>
+          <p>年轻人崇拜明星有时能获得努力的动力，但媒体更常放大消费和外貌标准，所以这一趋势<b>总体偏负面</b>。</p>
         </div>
         <div class="qblock">
           <h4>得分点（节选）</h4>
@@ -383,133 +267,126 @@
           </ol>
         </div>
       </div>
-      <div class="chain-box glass reveal">
+      <div class="reveal">
         <div class="ctrl">
-          <div class="seg" id="paraSeg"><button class="on" data-p="0">主体段 1</button><button data-p="1">主体段 2</button></div>
-          <div class="seg" id="langSeg"><button class="on" data-l="both">中英</button><button data-l="en">English</button><button data-l="zh">中文</button></div>
+          <div class="seg" id="paraSeg" role="group" aria-label="选择主体段"><button type="button" class="on" data-p="0">主体段 1</button><button type="button" data-p="1">主体段 2</button></div>
+          <div class="seg" id="langSeg" role="group" aria-label="选择语言"><button type="button" class="on" data-l="both">中英</button><button type="button" data-l="en">English</button><button type="button" data-l="zh">中文</button></div>
         </div>
-        <div class="para-meta" id="paraMeta"></div>
-        <div class="chain" id="chain"><div class="rail"><i id="railFill"></i></div></div>
-        <button class="replay" id="replay">↻ 重新播放推导过程</button>
+        <div class="facts para-meta" id="paraMeta"></div>
+        <ol class="chain" id="chain"></ol>
       </div>
     </div>
   </div>
 </section>
 
-<section id="gallery" class="alt">
+<section id="gallery" class="section alt">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="eyebrow">SCREENSHOTS</div>
-      <h2>真实界面</h2>
-      <p>iOS 17 · SwiftUI 原生界面，浅青色主调，长时间阅读不累眼。</p>
-    </div>
+    <div class="sec-title"><h2>真实界面</h2><p>iOS 17 原生 SwiftUI 界面，浅青色主调，长时间阅读不累眼。</p></div>
     <div class="gallery">
-      <div class="shot reveal"><div class="frame"><img src="assets/home-expanded.jpg" alt="" loading="lazy"></div><h4>首页</h4><p>学习进度 · 11 类题库可折叠</p></div>
-      <div class="shot reveal"><div class="frame"><img src="assets/detail.jpg" alt="" loading="lazy"></div><h4>题目详情</h4><p>原题翻译 · 概念拆解</p></div>
-      <div class="shot reveal"><div class="frame"><img src="assets/detail-chain.jpg" alt="" loading="lazy"></div><h4>中文逻辑链</h4><p>每段标明作用与角度</p></div>
-      <div class="shot reveal"><div class="frame"><img src="assets/detail-bilingual.jpg" alt="" loading="lazy"></div><h4>中英逐句对照</h4><p>重点短语同步高亮</p></div>
-      <div class="shot reveal"><div class="frame"><img src="assets/favorites.jpg" alt="" loading="lazy"></div><h4>我的收藏</h4><p>按分类归档的题目</p></div>
-      <div class="shot reveal"><div class="frame"><img src="assets/saved.jpg" alt="" loading="lazy"></div><h4>词汇与句子收藏</h4><p>长按即可存入素材库</p></div>
-      <div class="shot reveal"><div class="frame"><img src="assets/secrets.jpg" alt="" loading="lazy"></div><h4>写作秘籍</h4><p>每完成 30 篇解锁一份</p></div>
-      <div class="shot reveal"><div class="frame"><img src="assets/secret1.jpg" alt="" loading="lazy"></div><h4>秘籍详情</h4><p>方法要点 + 可练习句型</p></div>
+      <figure class="reveal"><div class="phone"><img src="assets/home-expanded.jpg" alt="首页" width="414" height="900" loading="lazy"></div><figcaption>首页<span>学习进度，11 类题库可折叠</span></figcaption></figure>
+      <figure class="reveal"><div class="phone"><img src="assets/detail.jpg" alt="题目详情" width="414" height="900" loading="lazy"></div><figcaption>题目详情<span>原题翻译与概念拆解</span></figcaption></figure>
+      <figure class="reveal"><div class="phone"><img src="assets/detail-chain.jpg" alt="中文逻辑链" width="414" height="900" loading="lazy"></div><figcaption>中文逻辑链<span>每段标明作用与角度</span></figcaption></figure>
+      <figure class="reveal"><div class="phone"><img src="assets/detail-bilingual.jpg" alt="中英逐句对照" width="414" height="900" loading="lazy"></div><figcaption>中英逐句对照<span>重点短语同步高亮</span></figcaption></figure>
+      <figure class="reveal"><div class="phone"><img src="assets/favorites.jpg" alt="我的收藏" width="414" height="900" loading="lazy"></div><figcaption>我的收藏<span>按分类归档的题目</span></figcaption></figure>
+      <figure class="reveal"><div class="phone"><img src="assets/saved.jpg" alt="词汇与句子收藏" width="414" height="900" loading="lazy"></div><figcaption>词汇与句子收藏<span>长按即可存入素材库</span></figcaption></figure>
+      <figure class="reveal"><div class="phone"><img src="assets/secrets.jpg" alt="写作秘籍" width="414" height="900" loading="lazy"></div><figcaption>写作秘籍<span>每完成 30 篇解锁一份</span></figcaption></figure>
+      <figure class="reveal"><div class="phone"><img src="assets/secret1.jpg" alt="秘籍详情" width="414" height="900" loading="lazy"></div><figcaption>秘籍详情<span>方法要点与可练习句型</span></figcaption></figure>
     </div>
     <p class="note">截图来自 iPhone 17 Pro 模拟器真实运行画面；学习进度、收藏为演示数据。</p>
   </div>
 </section>
 
-<section id="process">
+<section id="process" class="section">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="eyebrow">HOW I BUILT IT</div>
-      <h2>写代码只占一小部分，<br>大部分时间在「打磨内容」</h2>
-      <p>我和 AI 协作完成了从内容规范、语料整理、批量生成到质量审计的完整流程，App 本身是最后一步。</p>
-    </div>
-    <div class="pipe">
-      <div class="pstep reveal"><div class="no">1</div><div><h3>定内容规范</h3><p>先写出一份《生成格式》文档：每题包含哪些栏目、每段几步、得分点必须覆盖审题/结构/论证，禁止空泛表达。</p></div></div>
-      <div class="pstep reveal"><div class="no">2</div><div><h3>整理参考语料</h3><p>从公开数据集和范文站筛出 Band 7–7.5 作文，与 252 道题逐题匹配，每题至少 10 篇参考。</p><span class="num grad-text" data-count="2230">2,230</span><small>篇清洗后的完整范文</small></div></div>
-      <div class="pstep reveal"><div class="no">3</div><div><h3>分批生成与重写</h3><p>按题号分批，让 AI 依规范提炼逻辑链并原创改写；结构历经「固定六步 → 自然表达 → 灵活 4–7 步」多次重构。</p><span class="num grad-text" data-count="93">93</span><small>个分批工作文件</small></div></div>
-      <div class="pstep reveal"><div class="no">4</div><div><h3>多轮审计修复</h3><p>再用 AI 交叉审读：中英是否对应、逻辑是否跳跃、中文是否易懂；每轮问题都记录在案，修复后合并。</p><span class="num grad-text" data-count="578">578</span><small>条问题被记录并处理</small></div></div>
-      <div class="pstep reveal"><div class="no">5</div><div><h3>校验并打包进 App</h3><p>Python 脚本校验字段与禁用词后原子合并；Node 脚本检查 252 题结构，生成 App 读取的精简题库。</p><span class="num grad-text">0</span><small>最终全量复查遗留问题</small></div></div>
-    </div>
+    <div class="sec-title"><h2>开发过程</h2><p>写代码只占一小部分，大部分时间在打磨内容。App 本身是最后一步。</p></div>
+    <article class="entry reveal">
+      <div class="entry-date">第 1 步</div>
+      <div><h3>定内容规范</h3><p>先写出一份《生成格式》文档：每题包含哪些栏目、每段几步，得分点必须覆盖审题、结构和论证，禁止空泛表达。</p></div>
+    </article>
+    <article class="entry reveal">
+      <div class="entry-date">第 2 步</div>
+      <div><h3>整理参考语料</h3><p>从公开数据集和范文站筛出 Band 7–7.5 作文，与 252 道题逐题匹配，每题至少 10 篇参考。</p>
+        <div class="facts"><span>清洗后的完整范文<b>2,230 篇</b></span></div></div>
+    </article>
+    <article class="entry reveal">
+      <div class="entry-date">第 3 步</div>
+      <div><h3>分批生成与重写</h3><p>按题号分批，让 AI 依规范提炼逻辑链并原创改写；结构先后经历固定六步、自然表达、灵活 4–7 步几次重构。</p>
+        <div class="facts"><span>分批工作文件<b>93 个</b></span></div></div>
+    </article>
+    <article class="entry reveal">
+      <div class="entry-date">第 4 步</div>
+      <div><h3>多轮审计修复</h3><p>再用 AI 交叉审读：中英是否对应、逻辑是否跳跃、中文是否易懂；每轮问题都记录在案，修复后合并。</p>
+        <div class="facts"><span>记录并处理的问题<b>578 条</b></span></div></div>
+    </article>
+    <article class="entry reveal">
+      <div class="entry-date">第 5 步</div>
+      <div><h3>校验并打包进 App</h3><p>Python 脚本校验字段与禁用词后原子合并；Node 脚本检查 252 题结构，生成 App 读取的精简题库。</p>
+        <div class="facts"><span>最终全量复查遗留问题<b>0</b></span></div></div>
+    </article>
 
-    <div class="tech">
-      <div class="tcard glass reveal">
-        <h3><i>APP</i>iOS 客户端</h3>
-        <ul>
-          <li>SwiftUI · iOS 17，约 3,200 行 Swift</li>
-          <li>题库 <code>questions.json</code> 随包分发，完全离线</li>
-          <li>学习进度存于本地，支持导出 / 导入备份文件</li>
+    <h3 class="sub-t">技术与协作方式</h3>
+    <div class="rows reveal">
+      <div class="row">
+        <div class="row-k">iOS 客户端</div>
+        <div class="row-v"><ul class="bullets">
+          <li>SwiftUI，iOS 17，约 3,200 行 Swift</li>
+          <li>题库 <span class="fname">questions.json</span> 随包分发，完全离线</li>
+          <li>学习进度存于本地，支持导出、导入备份文件</li>
           <li>中英高亮按词边界匹配，避免误标半个单词</li>
-        </ul>
+        </ul></div>
       </div>
-      <div class="tcard glass reveal">
-        <h3><i>DATA</i>内容流水线</h3>
-        <ul>
+      <div class="row">
+        <div class="row-k">内容流水线</div>
+        <div class="row-v"><ul class="bullets">
           <li>Python：语料下载（遵守 robots.txt）、清洗、按题匹配</li>
           <li>Python：7 个合并脚本，先校验再原子写入主题库</li>
-          <li>Node.js：<code>generate_ios_questions.mjs</code> 校验并生成题库</li>
+          <li>Node.js：<span class="fname">generate_ios_questions.mjs</span> 校验并生成题库</li>
           <li>大规模重构前保留带日期的题库备份，可随时回退</li>
-        </ul>
+        </ul></div>
       </div>
-      <div class="tcard glass reveal">
-        <h3><i>AI</i>AI 协作方式</h3>
-        <ul>
+      <div class="row">
+        <div class="row-k">AI 协作方式</div>
+        <div class="row-v"><ul class="bullets">
           <li>AI 写代码、批量生成与审读内容，我负责定规范和验收</li>
           <li>规则写成文档，而不是每次口头描述</li>
           <li>审计结果结构化：题号、字段、问题、修改建议</li>
           <li>参考范文只做内部分析，App 内容为重新提炼的原创表达</li>
-        </ul>
+        </ul></div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="learn" class="alt">
+<section id="learn" class="section alt">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="eyebrow">TAKEAWAYS</div>
-      <h2>这个项目教会我的事</h2>
-    </div>
+    <div class="sec-title"><h2>这个项目教会我的事</h2></div>
     <div class="learn">
-      <div class="lcard glass reveal"><div class="k">01</div><div><h3>从真实痛点出发梳理需求</h3><p>把考生「写不出来」拆成「不知道题目问什么、立场选不好、段落推不下去」三个具体问题，每个功能都对应其中一个，取舍才有依据。</p><span class="tagline">需求分析 · 用户视角</span></div></div>
-      <div class="lcard glass reveal"><div class="k">02</div><div><h3>把零散内容变成结构化资产</h3><p>先定义每道题的字段和标准，再批量生产。252 道题共用一套结构，App、复制导出、校验脚本都能直接复用。</p><span class="tagline">内容结构化 · 标准化</span></div></div>
-      <div class="lcard glass reveal"><div class="k">03</div><div><h3>用「审计—修复」闭环做质量</h3><p>每一轮都先找问题、记录、修复、再复查，直到最终全量复查无遗留。质量不是一次写对，而是一轮轮迭代出来的。</p><span class="tagline">迭代 · 质量把控</span></div></div>
-      <div class="lcard glass reveal"><div class="k">04</div><div><h3>把 AI 当作可管理的团队</h3><p>给清晰的规范、分好批次、定好验收标准，AI 就能稳定交付。这和对接客户、协调资源、推动交付的思路是一样的。</p><span class="tagline">跨角色协作 · 项目推进</span></div></div>
+      <article class="reveal"><h3>从真实痛点出发梳理需求</h3><p>把考生「写不出来」拆成三个具体问题：不知道题目问什么、立场选不好、段落推不下去。每个功能都对应其中一个，取舍才有依据。</p><div class="tags"><span class="tag">需求分析</span><span class="tag">用户视角</span></div></article>
+      <article class="reveal"><h3>把零散内容变成结构化资产</h3><p>先定义每道题的字段和标准，再批量生产。252 道题共用一套结构，App、复制导出、校验脚本都能直接复用。</p><div class="tags"><span class="tag">内容结构化</span><span class="tag">标准化</span></div></article>
+      <article class="reveal"><h3>用「审计、修复」闭环做质量</h3><p>每一轮都先找问题、记录、修复、再复查，直到最终全量复查无遗留。质量不是一次写对，而是一轮轮迭代出来的。</p><div class="tags"><span class="tag">迭代</span><span class="tag">质量把控</span></div></article>
+      <article class="reveal"><h3>把 AI 当作可管理的团队</h3><p>给清晰的规范、分好批次、定好验收标准，AI 就能稳定交付。这和对接客户、协调资源、推动交付的思路是一样的。</p><div class="tags"><span class="tag">跨角色协作</span><span class="tag">项目推进</span></div></article>
     </div>
   </div>
 </section>
-
-<div class="final">
-  <div class="wrap reveal">
-    <img src="assets/icon.png" alt="雅思大作文逻辑链">
-    <h2>有思路，<span class="grad-text">才写得下去</span></h2>
-    <p>雅思大作文逻辑链 · 252 道高频题的中英逻辑链复习 App</p>
-    <div class="cta" style="justify-content:center">
-      <a class="btn btn-main" href="#demo">再看一遍逻辑链演示</a>
-      <a class="btn btn-ghost" href="#gallery">浏览界面截图</a>
-    </div>
-  </div>
-</div>
+</main>
 
 <div class="s-pager">
   <div class="wrap">
-    <a class="glass" href="../psync/index.html"><span class="arr">←</span><img src="../psync/assets/icon.png" alt=""><span><small>上一个作品</small><b>PSync · 聚会照片互传</b></span></a>
-    <a class="glass next" href="../index.html"><span><small>返回</small><b>粟琬宁 · 简历</b></span><span class="ph">SW</span><span class="arr">→</span></a>
+    <a href="../psync/index.html"><img src="../psync/assets/icon.png" alt=""><span><small>上一个作品</small><b>PSync，聚会照片互传</b></span></a>
+    <a class="next" href="../index.html"><span><small>返回</small><b>粟琬宁的简历</b></span></a>
   </div>
 </div>
 
 <footer class="site-foot">
   <div class="wrap">
-    <span>© 2026 雅思大作文逻辑链 · 由粟琬宁借助 AI 独立设计开发 · SwiftUI · iOS 17</span>
-    <nav><a href="../index.html">简历</a><a href="../psync/index.html">PSync</a><a href="../ielts/index.html">雅思逻辑链</a></nav>
+    <span>© 2026 粟琬宁　本站借助 AI 设计搭建</span>
+    <nav><a href="../index.html">简历</a><a href="../psync/index.html">PSync</a><a href="../ielts/index.html">雅思逻辑链</a><a href="mailto:3173524356@qq.com">Email</a></nav>
   </div>
 </footer>
 
+<script src="../assets/site.js"></script>
 <script>
-const STATIC = /[?&]static\b/.test(location.search);
-if (STATIC) document.documentElement.classList.add('static');
-
-/* ---------- 第 2 题真实数据（取自 questions.json） ---------- */
+/* 第 2 题真实数据（取自 questions.json）：[英文, 中文, 英文高亮, 中文高亮] */
 const PARAS = [
   { role: '让步', angle: '努力与自律', steps: [
     ['Following celebrities with genuine achievements can show young people the value of long-term practice.', '关注真正有成就的明星，可以让年轻人看到长期练习的价值。', ['the value of long-term practice'], ['长期练习的价值']],
@@ -529,38 +406,16 @@ const PARAS = [
 ];
 
 const esc = s => s.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
-const mark = (text, terms) => {
-  let out = esc(text);
-  terms.forEach(t => { out = out.replace(esc(t), '<span class="hl">' + esc(t) + '</span>'); });
-  return out;
-};
+const mark = (text, terms) => terms.reduce((out, t) => out.replace(esc(t), '<span class="hl">' + esc(t) + '</span>'), esc(text));
 
 const chain = document.getElementById('chain');
-const rail = document.getElementById('railFill');
 const meta = document.getElementById('paraMeta');
-let para = 0, timers = [];
 
-function render() {
-  timers.forEach(clearTimeout); timers = [];
-  const p = PARAS[para];
-  meta.innerHTML = `<span>作用：<b>${p.role}</b></span><span>角度：<b>${p.angle}</b></span><span>共 <b>${p.steps.length}</b> 步</span>`;
-  chain.querySelectorAll('.node').forEach(n => n.remove());
-  rail.style.transition = 'none'; rail.style.height = '0';
-  const nodes = p.steps.map((s, i) => {
-    const el = document.createElement('div');
-    el.className = 'node' + (i === p.steps.length - 1 ? ' last' : '');
-    el.innerHTML = `<div class="n">${i + 1}</div><div class="en">${mark(s[0], s[2])}</div><div class="zh">${mark(s[1], s[3])}</div>`;
-    chain.appendChild(el);
-    return el;
-  });
-  void rail.offsetWidth;
-  rail.style.transition = '';
-  if (STATIC) { nodes.forEach(el => el.classList.add('in')); rail.style.height = '100%'; return; }
-  nodes.forEach((el, i) => timers.push(setTimeout(() => {
-    el.classList.add('in');
-    rail.style.height = (el.offsetTop + 22) + 'px';
-    if (i === nodes.length - 1) rail.style.height = '100%';
-  }, 250 + i * 520)));
+function render(i) {
+  const p = PARAS[i];
+  meta.innerHTML = `<span>作用<b>${p.role}</b></span><span>角度<b>${p.angle}</b></span><span>步数<b>${p.steps.length}</b></span>`;
+  chain.innerHTML = p.steps.map((s, k) => `<li${k === p.steps.length - 1 ? ' class="last"' : ''}>
+    <div class="en">${mark(s[0], s[2])}</div><div class="zh">${mark(s[1], s[3])}</div></li>`).join('');
 }
 
 function bindSeg(id, fn) {
@@ -571,48 +426,9 @@ function bindSeg(id, fn) {
     fn(b);
   });
 }
-bindSeg('paraSeg', b => { para = +b.dataset.p; render(); });
+bindSeg('paraSeg', b => render(+b.dataset.p));
 bindSeg('langSeg', b => { chain.className = 'chain' + (b.dataset.l === 'en' ? ' en-only' : b.dataset.l === 'zh' ? ' zh-only' : ''); });
-document.getElementById('replay').addEventListener('click', render);
-
-/* 滚动到演示区时再开始播放 */
-if (STATIC) render();
-else new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { render(); o.disconnect(); } }), { threshold: .25 }).observe(chain);
-
-/* ---------- hero 手机截图轮播 ---------- */
-const CAPS = ['首页 · 学习进度与 11 类题库', '题目详情 · 原题与概念拆解', '中英逐句对照 · 重点短语高亮', '写作秘籍 · 每 30 篇解锁一份'];
-const heroImgs = [...document.querySelectorAll('#heroPhone img')];
-const heroDots = [...document.querySelectorAll('#heroDots i')];
-let hi = 0;
-if (!STATIC) setInterval(() => {
-  hi = (hi + 1) % heroImgs.length;
-  heroImgs.forEach((im, k) => im.classList.toggle('on', k === hi));
-  heroDots.forEach((d, k) => d.classList.toggle('on', k === hi));
-  document.getElementById('heroCap').textContent = CAPS[hi];
-}, 3200);
-
-/* ---------- 数字计数 ---------- */
-function countUp(el) {
-  const to = +el.dataset.count, t0 = performance.now(), dur = 1400;
-  if (STATIC) { el.textContent = to.toLocaleString('en-US'); return; }
-  const tick = now => {
-    const k = Math.min(1, (now - t0) / dur), v = Math.round(to * (1 - Math.pow(1 - k, 3)));
-    el.textContent = v.toLocaleString('en-US');
-    if (k < 1) requestAnimationFrame(tick);
-  };
-  requestAnimationFrame(tick);
-}
-
-/* ---------- 渐显 ---------- */
-const io = new IntersectionObserver(es => es.forEach(e => {
-  if (!e.isIntersecting) return;
-  e.target.classList.add('in');
-  e.target.querySelectorAll('[data-count]').forEach(countUp);
-  io.unobserve(e.target);
-}), { threshold: .15 });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-document.querySelectorAll('.stats [data-count]').forEach(countUp);
+render(0);
 </script>
-<script src="../assets/site.js"></script>
 </body>
 </html>

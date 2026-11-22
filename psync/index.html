@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>PSync · 聚会照片，一次传齐 | 粟琬宁作品集</title>
+<title>PSync：聚会照片，一次传齐｜粟琬宁作品集</title>
 <meta name="description" content="PSync：2–8 人面对面，一次互传所有照片。原图画质，相同照片不重复。粟琬宁借助 AI 独立开发的 iOS 应用。">
-<meta name="theme-color" content="#060914">
+<meta name="theme-color" content="#FFFFFF">
 <meta property="og:type" content="website">
-<meta property="og:title" content="PSync · 聚会照片，一次传齐">
-<meta property="og:description" content="2–8 人面对面，一次互传所有照片。粟琬宁作品集 · iOS 应用">
+<meta property="og:title" content="PSync：聚会照片，一次传齐">
+<meta property="og:description" content="2–8 人面对面，一次互传所有照片。粟琬宁借助 AI 独立开发的 iOS 应用。">
 <meta property="og:url" content="https://sandglass-vic.github.io/ice-cv/psync/">
 <meta property="og:image" content="https://sandglass-vic.github.io/ice-cv/psync/promo/poster.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -16,496 +16,211 @@
 <link rel="stylesheet" href="../assets/site.css">
 <script>if (/[?&]static\b/.test(location.search)) document.documentElement.classList.add('static');</script>
 <style>
-  /* 变量、导航、按钮、卡片、页脚见 ../assets/site.css */
+  /* 通用组件见 ../assets/site.css，这里只写本页布局 */
 
-  /* hero */
-  .hero { position: relative; padding: calc(var(--top-h) + 76px) 0 90px; overflow: hidden; }
-  .hero::before {
-    content: ""; position: absolute; inset: 0;
-    background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size: 56px 56px; mask-image: radial-gradient(ellipse at 50% 30%, #000 20%, transparent 70%);
-    -webkit-mask-image: radial-gradient(ellipse at 50% 30%, #000 20%, transparent 70%); opacity: .5;
+  /* ---------- 头部 ---------- */
+  .hero { padding: 64px 0 40px; }
+  .app-head { display: flex; align-items: center; gap: 18px; }
+  .app-head img { width: 64px; height: 64px; border-radius: 12px; border: 1px solid var(--line); flex: none; }
+  .hero h1 { font-size: var(--fs-name); line-height: 1.2; }
+  .app-sub { color: var(--muted); font-size: 15px; margin-top: 2px; }
+  .lead { margin-top: 20px; font-size: 17px; max-width: 640px; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 4px 24px; margin-top: 12px; color: var(--muted); font-size: var(--fs-sm); }
+  .hero .btns { margin-top: 26px; }
+  .hero .metric-row { margin-top: 48px; }
+
+  /* ---------- 视频 ---------- */
+  .video { max-width: 880px; }
+  .video video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: var(--bg-alt); }
+
+  /* ---------- 使用场景：两栏细线网格 ---------- */
+  .scenes { display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; border-bottom: 1px solid var(--line); }
+  .scenes > div { padding: 18px 0; border-top: 1px solid var(--line); }
+  .scenes h3 { font-size: 16px; }
+  .scenes p { color: var(--text); margin-top: 2px; }
+  .sub-h { font-size: var(--fs-h3); margin: 48px 0 16px; }
+
+  /* 以前 / 用 PSync 对照表 */
+  .cmp { display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
+  .cmp > div { padding: 14px 0; border-top: 1px solid var(--line); }
+  .cmp > .h { padding: 0 0 10px; border-top: 0; color: var(--muted); font-size: var(--fs-sm); }
+  .cmp > .h.b { color: var(--ink); font-weight: 600; }
+  .cmp > div:nth-last-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .cmp .old { color: var(--muted); }
+  .cmp .new { color: var(--ink); }
+
+  /* ---------- 怎么用 ---------- */
+  .step-no { color: var(--muted); font-size: var(--fs-sm); padding-top: 2px; }
+  .steps .entry p { margin-top: 4px; }
+
+  /* ---------- 开发过程 ---------- */
+  .proc .tags { margin-top: 16px; }
+  .proc-links { display: flex; flex-wrap: wrap; gap: 6px 24px; margin-top: 16px; font-size: 15px; }
+
+  @media (max-width: 760px) {
+    .hero { padding: 36px 0 28px; }
+    .app-head img { width: 52px; height: 52px; border-radius: 10px; }
+    .lead { font-size: 16px; }
+    .hero .btns .btn { flex: 1 1 auto; }
+    .hero .metric-row { margin-top: 32px; }
+    .scenes { grid-template-columns: minmax(0, 1fr); }
+    .sub-h { margin-top: 40px; }
+    .cmp { column-gap: 20px; font-size: 15px; }
+    .s-pager a.next img { order: -1; }
   }
-  .orb { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .55; animation: float 12s ease-in-out infinite; }
-  @keyframes float { 0%,100% { transform: translate(0,0); } 50% { transform: translate(30px,-30px); } }
-  .hero .wrap { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; }
-  .tag {
-    display: inline-block; padding: 6px 14px; border-radius: 999px; font-size: 14px; color: var(--cyan);
-    border: 1px solid rgba(34, 211, 238, .35); background: rgba(34, 211, 238, .08); margin-bottom: 22px;
-  }
-  .hero h1 { font-size: 64px; line-height: 1.15; font-weight: 800; letter-spacing: -1px; }
-  .hero p.lead { font-size: 20px; color: var(--muted); margin: 22px 0 36px; max-width: 520px; }
-  .cta { display: flex; gap: 14px; flex-wrap: wrap; }
-  .stats { display: flex; gap: 40px; margin-top: 48px; }
-  .stats b { display: block; font-size: 30px; font-weight: 800; }
-  .stats span { font-size: 14px; color: var(--muted); }
-
-  /* phone demo */
-  .stage { position: relative; display: flex; justify-content: center; }
-  .stage::before {
-    content: ""; position: absolute; width: 380px; height: 380px; top: 50%; left: 50%; transform: translate(-50%,-50%);
-    background: radial-gradient(circle, rgba(59,130,255,.45), transparent 65%); filter: blur(20px);
-  }
-  .phone {
-    position: relative; width: 300px; height: 620px; border-radius: 48px; padding: 10px;
-    background: linear-gradient(145deg, #2a3045, #0d1020); box-shadow: 0 40px 80px rgba(0,0,0,.6), inset 0 0 0 1px rgba(255,255,255,.08);
-  }
-  .screen { position: relative; width: 100%; height: 100%; border-radius: 39px; overflow: hidden; background: #fff; color: #1c1c1e; }
-  .island { position: absolute; top: 9px; left: 50%; width: 88px; height: 26px; margin-left: -44px; background: #000; border-radius: 14px; z-index: 5; }
-  .sbar { position: absolute; top: 0; left: 0; right: 0; height: 42px; padding: 12px 26px 0 32px; display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; z-index: 4; }
-  .pg { position: absolute; inset: 0; padding: 44px 14px 0; background: #fff; transition: transform .45s cubic-bezier(.4,0,.2,1), opacity .45s; }
-  .pg.off-r { transform: translateX(100%); }
-  .pg.off-l { transform: translateX(-30%); opacity: 0; }
-  .nb { height: 34px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; position: relative; }
-  .nb::before { content: "‹"; position: absolute; left: 0; top: -2px; color: #007aff; font-size: 24px; font-weight: 400; }
-  .pbtn { border-radius: 10px; padding: 12px; text-align: center; font-size: 14px; font-weight: 600; transition: all .3s; }
-  .pbtn.blue { background: #007aff; color: #fff; }
-  .pbtn.gray { background: #8e8e93; color: #fff; }
-  .pbtn.soft { background: rgba(0,122,255,.1); color: #007aff; }
-  .pbtn.ok { background: rgba(52,199,89,.15); color: #34c759; }
-  .dg { width: 34px; height: 40px; border-radius: 7px; background: rgba(142,142,147,.12); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 17px; }
-  .bn { background: rgba(0,122,255,.08); border-radius: 10px; padding: 10px; text-align: center; margin-top: 10px; }
-  .bn small { font-size: 10px; color: #8e8e93; display: block; }
-  .bn b { font: 700 27px "SF Mono", Menlo, monospace; letter-spacing: 6px; }
-  .mbs { display: flex; gap: 18px; padding: 16px 2px; }
-  .mb { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 10px; transition: transform .35s cubic-bezier(.3,1.6,.5,1), opacity .3s; }
-  .mb.hide { transform: scale(0); opacity: 0; }
-  .av { width: 50px; height: 50px; border-radius: 50%; position: relative; display: flex; align-items: center; justify-content: center; }
-  .av svg { width: 22px; height: 22px; }
-  .ck { position: absolute; top: -4px; right: -4px; width: 18px; height: 18px; border-radius: 50%; background: #fff; padding: 1px; }
-  .ck i { display: flex; width: 100%; height: 100%; border-radius: 50%; background: #8e8e93; color: #fff; font-size: 10px; font-style: normal; align-items: center; justify-content: center; transition: background .3s; }
-  .ck.on i { background: #34c759; }
-  .ring { position: relative; width: 120px; height: 120px; margin: 50px auto 14px; }
-  .ring svg { position: absolute; inset: 0; transform: rotate(-90deg); }
-  .ring .n { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 700; font-size: 30px; }
-  .ring .n small { font-size: 11px; color: #8e8e93; font-weight: 400; }
-  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin: 0 -14px; }
-  .cell { aspect-ratio: 1; background-size: cover; background-position: center; position: relative; transition: transform .35s, opacity .35s; }
-  .cell.hide { transform: scale(.8); opacity: 0; }
-  .cell span { position: absolute; left: 4px; bottom: 2px; color: #fff; font-size: 9px; font-weight: 600; text-shadow: 0 1px 2px rgba(0,0,0,.6); }
-  .seg { display: flex; background: rgba(118,118,128,.12); border-radius: 8px; padding: 2px; margin: 8px 0; font-size: 11px; }
-  .seg div { flex: 1; text-align: center; padding: 5px 0; border-radius: 6px; }
-  .seg .on { background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.12); font-weight: 600; }
-  .tap { position: absolute; width: 54px; height: 54px; margin: -27px 0 0 -27px; border-radius: 50%; background: rgba(0,122,255,.25); border: 2px solid rgba(0,122,255,.6); z-index: 6; opacity: 0; pointer-events: none; }
-  .tap.go { animation: tap .5s ease-out; }
-  @keyframes tap { 0% { opacity: .9; transform: scale(.6); } 100% { opacity: 0; transform: scale(1.3); } }
-
-  /* sections */
-  section { padding: 110px 0; position: relative; }
-  .sec-head { text-align: center; max-width: 680px; margin: 0 auto 60px; }
-  .eyebrow { color: var(--cyan); font-size: 14px; font-weight: 600; letter-spacing: 3px; }
-  .sec-head h2 { font-size: 44px; font-weight: 800; margin-top: 12px; line-height: 1.25; }
-  .sec-head p { color: var(--muted); font-size: 18px; margin-top: 16px; }
-
-  /* scenes */
-  .scenes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-  .scene { padding: 30px 26px; transition: transform .3s, border-color .3s; }
-  .scene:hover { transform: translateY(-6px); border-color: rgba(59,130,255,.5); }
-  .scene .em { font-size: 34px; }
-  .scene h3 { font-size: 20px; margin: 14px 0 6px; }
-  .scene p { color: var(--muted); font-size: 15px; }
-
-  /* pain vs psync */
-  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-  .col { padding: 36px; }
-  .col h3 { font-size: 22px; margin-bottom: 22px; display: flex; align-items: center; gap: 10px; }
-  .col li { list-style: none; display: flex; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); font-size: 16px; }
-  .col li:first-child { border-top: none; }
-  .col.bad li::before { content: "✕"; color: #ff6b6b; font-weight: 700; }
-  .col.good { border-color: rgba(59,130,255,.45); box-shadow: 0 0 60px rgba(59,130,255,.12) inset; }
-  .col.good li::before { content: "✓"; color: var(--cyan); font-weight: 700; }
-
-  /* steps */
-  .how { display: grid; grid-template-columns: 1fr 340px; gap: 60px; align-items: center; }
-  .steps { display: flex; flex-direction: column; gap: 14px; }
-  .step { display: flex; gap: 20px; padding: 22px 24px; cursor: pointer; transition: all .3s; position: relative; overflow: hidden; }
-  .step .no { flex: none; width: 46px; height: 46px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; background: rgba(255,255,255,.06); color: var(--muted); transition: all .3s; }
-  .step h3 { font-size: 20px; }
-  .step p { color: var(--muted); font-size: 15px; margin-top: 4px; }
-  .step .bar { position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--grad); }
-  .step.on { border-color: rgba(59,130,255,.55); background: linear-gradient(160deg, rgba(59,130,255,.14), rgba(34,211,238,.04)); }
-  .step.on .no { background: var(--grad); color: #fff; }
-
-  /* features */
-  .feats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-  .feat { padding: 34px 28px; }
-  .feat .ic { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 22px; }
-  .feat .ic svg { width: 28px; height: 28px; }
-  .feat h3 { font-size: 21px; }
-  .feat p { color: var(--muted); font-size: 15px; margin-top: 8px; }
-
-  /* video */
-  .video-box { padding: 14px; max-width: 960px; margin: 0 auto; }
-  .video-box video { width: 100%; display: block; border-radius: 14px; background: #000; }
-
-  /* final cta */
-  .final { text-align: center; padding: 120px 0; }
-  .final img { width: 96px; height: 96px; border-radius: 24px; background: #fff; box-shadow: 0 20px 60px rgba(59,130,255,.4); }
-  .final h2 { font-size: 52px; font-weight: 800; margin: 26px 0 12px; }
-  .final p { color: var(--muted); font-size: 18px; margin-bottom: 34px; }
-
-  .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s, transform .8s; }
-  .reveal.in { opacity: 1; transform: none; }
-
-  @media (max-width: 960px) {
-    .hero .wrap, .how { grid-template-columns: 1fr; }
-    .hero { padding: calc(var(--top-h) + 46px) 0 60px; text-align: center; }
-    .hero h1 { font-size: 42px; }
-    .hero p.lead { margin-left: auto; margin-right: auto; font-size: 17px; }
-    .cta, .stats { justify-content: center; }
-    .stats { gap: 28px; }
-    .scenes, .feats { grid-template-columns: 1fr 1fr; }
-    .compare { grid-template-columns: 1fr; }
-    .how .stage { order: -1; }
-    section { padding: 80px 0; }
-    .sec-head h2 { font-size: 32px; }
-    .final h2 { font-size: 36px; }
-  }
-  @media (max-width: 520px) {
-    .scenes, .feats { gap: 12px; }
-    .scene, .feat { padding: 20px 16px; border-radius: 18px; }
-    .scene .em { font-size: 28px; }
-    .scene h3, .feat h3 { font-size: 17px; margin-top: 8px; }
-    .scene p, .feat p { font-size: 13px; }
-    .feat .ic { width: 44px; height: 44px; border-radius: 12px; margin-bottom: 12px; }
-    .feat .ic svg { width: 22px; height: 22px; }
-    .hero h1 { font-size: 36px; }
-    .phone { transform: scale(.9); margin: -30px 0; }
-    .col { padding: 26px 22px; }
-    .stats b { font-size: 24px; }
-  }
-  .static .reveal { transition: none; opacity: 1; transform: none; }
-  @media (prefers-reduced-motion: reduce) { .orb { animation: none; } .reveal { transition: none; opacity: 1; transform: none; } }
 </style>
 </head>
 <body>
 
 <nav class="site-nav">
   <div class="wrap nav-in">
-    <a class="s-brand" href="../index.html"><span class="mark">SW</span><span>粟琬宁<span class="sub"> · Portfolio</span></span></a>
+    <a class="s-brand" href="../index.html">粟琬宁</a>
     <div class="s-tabs">
       <a href="../index.html">简历</a>
-      <a class="on" href="../psync/index.html"><img src="../psync/assets/icon.png" alt="">PSync</a>
-      <a href="../ielts/index.html"><img src="../ielts/assets/icon.png" alt="">雅思逻辑链</a>
+      <a class="on" href="../psync/index.html">PSync</a>
+      <a href="../ielts/index.html">雅思逻辑链</a>
     </div>
   </div>
-  <div class="s-progress"></div>
 </nav>
 <div class="s-subnav">
   <div class="wrap">
     <span class="t"><img src="assets/icon.png" alt="">PSync</span>
-    <a href="#scenes">使用场景</a><a href="#how">怎么用</a><a href="#features">亮点</a><a href="#video">演示视频</a>
+    <a href="#video">演示视频</a><a href="#scenes">使用场景</a><a href="#how">怎么用</a><a href="#features">亮点</a><a href="#process">开发过程</a>
   </div>
 </div>
 
-<header class="hero">
-  <div class="orb" style="width:520px;height:520px;background:#1d4ed8;left:-160px;top:-120px"></div>
-  <div class="orb" style="width:420px;height:420px;background:#0891b2;right:-120px;top:120px;animation-delay:-6s"></div>
+<header class="hero dots" id="top">
   <div class="wrap">
-    <div>
-      <span class="tag">面对面 · 多人照片互传</span>
-      <h1>聚会照片，<br><span class="grad-text">一次传齐。</span></h1>
-      <p class="lead">聚会、旅行、毕业典礼结束后，大家拍的照片散落在每个人手机里。打开 PSync，输入同一个加入码，所有人的照片一次到齐，原图画质。</p>
-      <div class="cta">
-        <a class="btn btn-main" href="#video">▶ 观看演示视频</a>
-        <a class="btn btn-ghost" href="#how">了解怎么用</a>
-      </div>
-      <div class="stats">
-        <div><b class="grad-text">2–8 人</b><span>同时互传</span></div>
-        <div><b class="grad-text">4 位数</b><span>加入码即可连接</span></div>
-        <div><b class="grad-text">原图</b><span>画质不压缩</span></div>
+    <div class="app-head">
+      <img src="assets/icon.png" alt="PSync 图标" width="64" height="64">
+      <div>
+        <h1>PSync</h1>
+        <div class="app-sub">聚会照片，一次传齐</div>
       </div>
     </div>
-    <div class="stage" id="heroStage"></div>
+    <p class="lead">聚会、旅行、毕业典礼结束后，大家拍的照片散落在每个人手机里。打开 PSync，输入同一个加入码，所有人的照片一次到齐，原图画质。</p>
+    <div class="hero-meta"><span>iOS 应用</span><span>个人项目，借助 AI 独立开发</span><span class="tnum">2026.08 – 2026.11</span></div>
+    <div class="btns">
+      <a class="btn btn-main" href="#video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5.5v13l10.5-6.5z"/></svg><span>观看演示视频</span></a>
+      <a class="btn btn-ghost" href="../index.html">返回简历</a>
+    </div>
+    <div class="metric-row">
+      <div><b>2–8 人</b><span>面对面同时互传</span></div>
+      <div><b>4 位</b><span>加入码即可连接</span></div>
+      <div><b>原图</b><span>不压缩，含实况照片</span></div>
+      <div><b>本地直传</b><span>点对点，不经服务器</span></div>
+    </div>
   </div>
 </header>
 
-<section id="scenes">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="eyebrow">SCENES</div>
-      <h2>每一次相聚，都值得完整保存</h2>
-      <p>不管是谁拍的，每个人都能拿到全部照片。</p>
+<main>
+  <section id="video" class="section alt">
+    <div class="wrap">
+      <div class="sec-title"><h2>演示视频</h2><p>完整使用流程，以及两台设备的真实运行画面</p></div>
+      <div class="shot video reveal">
+        <video controls playsinline preload="metadata" poster="promo/poster.jpg" width="1280" height="720">
+          <source src="promo/PSync-promo.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
-    <div class="scenes">
-      <div class="scene glass reveal"><div class="em">🎉</div><h3>朋友聚会</h3><p>散场前一起点一下，合照、抓拍全都有。</p></div>
-      <div class="scene glass reveal"><div class="em">✈️</div><h3>结伴旅行</h3><p>旅途中每个人拍的风景，回程路上就能传齐。</p></div>
-      <div class="scene glass reveal"><div class="em">🎓</div><h3>毕业典礼</h3><p>同学之间互换照片，不用在群里一张张找。</p></div>
-      <div class="scene glass reveal"><div class="em">💍</div><h3>婚礼家宴</h3><p>亲友拍下的珍贵瞬间，原图留给新人。</p></div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="eyebrow">WHY PSYNC</div>
-      <h2>告别"你把照片发我一下"</h2>
-    </div>
-    <div class="compare">
-      <div class="col bad glass reveal">
-        <h3>😩 以前</h3>
-        <ul>
-          <li>照片散落在每个人手机里，要挨个找人要</li>
-          <li>聊天软件传图被压缩，原图要单独勾选</li>
-          <li>一张张转发，群里刷屏，还容易漏</li>
-          <li>同一张照片被好几个人重复发</li>
-        </ul>
+  <section id="scenes" class="section">
+    <div class="wrap">
+      <div class="sec-title"><h2>使用场景</h2><p>不管是谁拍的，每个人都能拿到全部照片</p></div>
+      <div class="scenes reveal">
+        <div><h3>朋友聚会</h3><p>散场前一起点一下，合照、抓拍全都有。</p></div>
+        <div><h3>结伴旅行</h3><p>旅途中每个人拍的风景，回程路上就能传齐。</p></div>
+        <div><h3>毕业典礼</h3><p>同学之间互换照片，不用在群里一张张找。</p></div>
+        <div><h3>婚礼家宴</h3><p>亲友拍下的珍贵瞬间，原图留给新人。</p></div>
       </div>
-      <div class="col good glass reveal">
-        <h3>✨ 用 PSync</h3>
-        <ul>
-          <li>所有人一起加入，照片一次全部到齐</li>
-          <li>默认原图画质，实况照片也能传</li>
-          <li>不用转发，自动收进相册，标明来自谁</li>
-          <li>相同的照片只传一次，不重复</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section id="how">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="eyebrow">HOW IT WORKS</div>
-      <h2>四步，照片全部到手</h2>
-      <p>点击任意一步，看看手机上是什么样子。</p>
-    </div>
-    <div class="how">
-      <div class="steps" id="steps">
-        <div class="step glass" data-i="0"><div class="no">1</div><div><h3>选择照片</h3><p>打开 PSync，从相册里选出你想分享的照片。</p></div><div class="bar"></div></div>
-        <div class="step glass" data-i="1"><div class="no">2</div><div><h3>输入加入码</h3><p>大家输入同一个 4 位加入码，点击「开始共享」，身边的朋友马上出现。</p></div><div class="bar"></div></div>
-        <div class="step glass" data-i="2"><div class="no">3</div><div><h3>全员确认</h3><p>核对屏幕上的安全码，所有人确认后，自动开始传输。</p></div><div class="bar"></div></div>
-        <div class="step glass" data-i="3"><div class="no">4</div><div><h3>自动收图</h3><p>照片自动存进相册，每一张都标明来自谁。</p></div><div class="bar"></div></div>
+      <h3 class="sub-h">告别「你把照片发我一下」</h3>
+      <div class="cmp reveal">
+        <div class="h">以前</div><div class="h b">用 PSync</div>
+        <div class="old">照片散落在每个人手机里，要挨个找人要</div><div class="new">所有人一起加入，照片一次全部到齐</div>
+        <div class="old">聊天软件传图被压缩，原图要单独勾选</div><div class="new">默认原图画质，实况照片也能传</div>
+        <div class="old">一张张转发，群里刷屏，还容易漏</div><div class="new">不用转发，自动收进相册，标明来自谁</div>
+        <div class="old">同一张照片被好几个人重复发</div><div class="new">相同的照片只传一次</div>
       </div>
-      <div class="stage" id="howStage"></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="features">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="eyebrow">HIGHLIGHTS</div>
-      <h2>简单，但每个细节都替你想好了</h2>
-    </div>
-    <div class="feats">
-      <div class="feat glass reveal">
-        <div class="ic" style="background:rgba(59,130,255,.16)"><svg viewBox="0 0 24 24" fill="none" stroke="#5b9bff" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="2"/><path d="M4 18l5-5 4 4 3-3 4 4"/></svg></div>
-        <h3>原图画质</h3><p>照片不压缩，实况照片也能完整保留。</p>
-      </div>
-      <div class="feat glass reveal">
-        <div class="ic" style="background:rgba(52,211,153,.16)"><svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><rect x="3" y="3" width="12" height="12" rx="2"/><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M12 15l2 2 4-4"/></svg></div>
-        <h3>不重复</h3><p>好几个人都有的同一张照片，只传一次。</p>
-      </div>
-      <div class="feat glass reveal">
-        <div class="ic" style="background:rgba(251,191,36,.16)"><svg viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2"><rect x="2" y="6" width="7" height="12" rx="2"/><rect x="15" y="6" width="7" height="12" rx="2"/><path d="M10 10h4M12 8l2 2-2 2M14 14h-4M12 12l-2 2 2 2"/></svg></div>
-        <h3>面对面直传</h3><p>照片在身边的手机之间直接传，不上传到云端。</p>
-      </div>
-      <div class="feat glass reveal">
-        <div class="ic" style="background:rgba(192,132,252,.16)"><svg viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <h3>安全确认</h3><p>全员核对安全码后才开始传，陌生人进不来。</p>
+  <section id="how" class="section alt">
+    <div class="wrap">
+      <div class="sec-title"><h2>怎么用</h2><p>四步，照片全部到手</p></div>
+      <div class="steps">
+        <div class="entry reveal">
+          <div class="step-no">第 <span class="tnum">1</span> 步</div>
+          <div><h3>选择照片</h3><p>打开 PSync，从相册里选出你想分享的照片。</p></div>
+        </div>
+        <div class="entry reveal">
+          <div class="step-no">第 <span class="tnum">2</span> 步</div>
+          <div><h3>输入加入码</h3><p>大家输入同一个 4 位加入码，点击「开始共享」，身边的朋友马上出现。</p></div>
+        </div>
+        <div class="entry reveal">
+          <div class="step-no">第 <span class="tnum">3</span> 步</div>
+          <div><h3>全员确认</h3><p>核对屏幕上的安全码，所有人确认后，自动开始传输。</p></div>
+        </div>
+        <div class="entry reveal">
+          <div class="step-no">第 <span class="tnum">4</span> 步</div>
+          <div><h3>自动收图</h3><p>照片自动存进系统「照片」的「PSync」相簿，每一张都标明来自谁。</p></div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="video">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="eyebrow">VIDEO</div>
-      <h2>一分钟看懂 PSync</h2>
-      <p>包含完整使用流程，以及两台设备的真实运行画面。</p>
+  <section id="features" class="section">
+    <div class="wrap">
+      <div class="sec-title"><h2>亮点</h2></div>
+      <div class="rows reveal">
+        <div class="row"><div class="row-k">原图画质</div><div class="row-v"><p>照片不压缩，实况照片也能完整保留。</p></div></div>
+        <div class="row"><div class="row-k">不重复</div><div class="row-v"><p>好几个人都有的同一张照片，只传一次。</p></div></div>
+        <div class="row"><div class="row-k">面对面直传</div><div class="row-v"><p>照片在身边的手机之间直接传，不上传到云端。</p></div></div>
+        <div class="row"><div class="row-k">多源接力</div><div class="row-v"><p>多台设备同时传，接力转发，整体更快。</p></div></div>
+        <div class="row"><div class="row-k">安全确认</div><div class="row-v"><p>全员核对安全码后才开始传，陌生人进不来。</p></div></div>
+      </div>
     </div>
-    <div class="video-box glass reveal">
-      <video controls playsinline preload="metadata" poster="promo/poster.jpg">
-        <source src="promo/PSync-promo.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-</section>
+  </section>
 
-<div class="final">
-  <div class="wrap reveal">
-    <img src="assets/icon.png" alt="PSync">
-    <h2>聚会照片，<span class="grad-text">一次传齐</span></h2>
-    <p>PSync · 2–8 人面对面照片互传</p>
-    <div class="cta" style="justify-content:center">
-      <a class="btn btn-main" href="#video">▶ 观看演示视频</a>
-      <a class="btn btn-ghost" href="https://github.com/Sandglass-vic/PSync">查看项目主页</a>
+  <section id="process" class="section alt proc">
+    <div class="wrap">
+      <div class="sec-title"><h2>我的角色与开发过程</h2></div>
+      <article class="entry reveal">
+        <div class="entry-date">2026.08 – 2026.11</div>
+        <div>
+          <h3>个人项目，借助 AI 独立开发</h3>
+          <div class="entry-sub">从需求梳理、开发测试到产品主页和宣传视频，由我一人完成</div>
+          <ul class="bullets">
+            <li>针对聚会后照片分散在各人手机的痛点梳理需求，定义核心功能：2–8 人面对面一次互传全部照片、原图画质（含实况照片）、相同照片只传一次、本地点对点传输不经服务器、核对安全码后开始传输。</li>
+            <li>编写结构化需求文档（分层架构、设备发现、去重与传输调度规则）指导 AI 开发。</li>
+            <li>设计多设备互传场景测试，用真机反复测试迭代，并制作产品主页与宣传视频。</li>
+          </ul>
+          <div class="tags"><span class="tag">iOS</span><span class="tag">SwiftUI</span><span class="tag">AI 辅助开发</span><span class="tag">需求文档</span><span class="tag">测试迭代</span></div>
+          <div class="proc-links">
+            <a class="link" href="https://sandglass-vic.github.io/PSync/">产品主页</a>
+            <a class="link" href="https://github.com/Sandglass-vic/PSync">GitHub 项目</a>
+          </div>
+        </div>
+      </article>
     </div>
-  </div>
-</div>
+  </section>
+</main>
 
 <div class="s-pager">
   <div class="wrap">
-    <a class="glass" href="../index.html"><span class="arr">←</span><span class="ph">SW</span><span><small>返回</small><b>粟琬宁 · 简历</b></span></a>
-    <a class="glass next" href="../ielts/index.html"><span><small>下一个作品</small><b>雅思大作文逻辑链</b></span><img src="../ielts/assets/icon.png" alt=""><span class="arr">→</span></a>
+    <a href="../index.html"><span><small>返回</small><b>粟琬宁的简历</b></span></a>
+    <a class="next" href="../ielts/index.html"><span><small>下一个作品</small><b>雅思逻辑链</b></span><img src="../ielts/assets/icon.png" alt=""></a>
   </div>
 </div>
 
 <footer class="site-foot">
   <div class="wrap">
-    <span>© 2026 PSync · 由粟琬宁借助 AI 独立设计开发</span>
-    <nav><a href="../index.html">简历</a><a href="../psync/index.html">PSync</a><a href="../ielts/index.html">雅思逻辑链</a><a href="https://github.com/Sandglass-vic/PSync">GitHub</a></nav>
+    <span>© 2026 粟琬宁　本站借助 AI 设计搭建</span>
+    <nav><a href="../index.html">简历</a><a href="../psync/index.html">PSync</a><a href="../ielts/index.html">雅思逻辑链</a><a href="mailto:3173524356@qq.com">Email</a></nav>
   </div>
 </footer>
 
-<template id="phoneTpl">
-  <div class="phone">
-    <div class="screen">
-      <div class="island"></div>
-      <div class="sbar"><span>9:41</span><span>●●● ▮</span></div>
-      <div class="pg" data-pg="home">
-        <div style="display:flex;flex-direction:column;align-items:center;margin-top:110px">
-          <img src="assets/icon.png" style="width:72px;height:72px" alt="">
-          <div style="font-size:26px;font-weight:700">PSync</div>
-          <div style="font-size:12px;color:#8e8e93;margin-top:2px">面对面本地照片互传</div>
-        </div>
-        <div class="pbtn soft" data-el="pick" style="margin-top:24px">＋ 选择照片</div>
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:18px">
-          <b style="font-size:14px">加入码</b>
-          <div style="display:flex;gap:6px"><div class="dg"></div><div class="dg"></div><div class="dg"></div><div class="dg"></div></div>
-        </div>
-        <div class="pbtn gray" data-el="start" style="margin-top:18px">开始共享</div>
-      </div>
-      <div class="pg off-r" data-pg="share">
-        <div class="nb">PSync面对面共享</div>
-        <div data-el="phase" style="text-align:center;font-size:11px;color:#8e8e93;margin-top:4px">正在发现附近设备...</div>
-        <div class="bn"><small>加入码</small><b>4242</b></div>
-        <div class="bn" data-el="sec" style="opacity:0;transition:opacity .4s"><small>群组安全码</small><b>382916</b></div>
-        <div class="mbs" data-el="members"></div>
-        <div class="pbtn blue" data-el="confirm" style="position:absolute;left:14px;right:14px;bottom:44px;opacity:0;transition:opacity .4s">确认共享</div>
-      </div>
-      <div class="pg off-r" data-pg="transfer">
-        <div class="nb">PSync照片传输</div>
-        <div data-el="ringWrap" style="transition:opacity .4s">
-          <div class="ring">
-            <svg width="120" height="120"><circle cx="60" cy="60" r="54" fill="none" stroke="rgba(0,122,255,.12)" stroke-width="8"/><circle data-el="ring" cx="60" cy="60" r="54" fill="none" stroke="#007aff" stroke-width="8" stroke-linecap="round" stroke-dasharray="339.3" stroke-dashoffset="339.3" style="transition:stroke-dashoffset .4s"/></svg>
-            <div class="n"><span data-el="num">0</span><small>/ 4 张</small></div>
-          </div>
-          <div style="text-align:center;font-size:13px;font-weight:600;color:#8e8e93">正在接收照片…</div>
-        </div>
-        <div data-el="results" style="position:absolute;left:14px;right:14px;top:82px;opacity:0;transition:opacity .4s">
-          <div style="display:flex;align-items:center;gap:6px">
-            <div style="width:22px;height:22px;border-radius:50%;background:#34c759;color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center">✓</div>
-            <div><div style="font-size:13px;font-weight:600">全部完成</div><div style="font-size:11px;color:#8e8e93">4 / 4 张</div></div>
-          </div>
-          <div style="font-size:10px;color:#8e8e93;margin-top:4px">照片已写入系统「照片」的「PSync」相簿</div>
-          <div class="seg"><div class="on">已收到</div><div>我共享的</div></div>
-          <div class="grid" data-el="grid"></div>
-        </div>
-      </div>
-      <div class="tap" data-el="tap"></div>
-    </div>
-  </div>
-</template>
-
-<script>
-const PERSON = '<svg viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="7.5" r="4.5"/><path d="M3 21c0-5 4-8 9-8s9 3 9 8z"/></svg>';
-const MEMBERS = [['Sean', '#007aff'], ['小雨', '#34c759'], ['阿杰', '#ff9500']];
-const GRID = [['p3', '小雨'], ['p4', '小雨'], ['p5', '阿杰'], ['p6', '阿杰']];
-const STEP_MS = 4200;
-
-function makePhone(stage) {
-  stage.appendChild(document.getElementById('phoneTpl').content.cloneNode(true));
-  const root = stage.querySelector('.phone');
-  const q = s => root.querySelector(`[data-el="${s}"]`);
-  const pg = n => root.querySelector(`[data-pg="${n}"]`);
-  q('members').innerHTML = MEMBERS.map(m =>
-    `<div class="mb hide"><div class="av" style="background:${m[1]}">${PERSON}<div class="ck" style="opacity:0"><i>✓</i></div></div>${m[0]}</div>`).join('');
-  q('grid').innerHTML = GRID.map(g => `<div class="cell hide" style="background-image:url(assets/${g[0]}.jpg)"><span>${g[1]}</span></div>`).join('');
-  const digits = [...root.querySelectorAll('.dg')];
-  let timers = [];
-  const at = (ms, fn) => timers.push(setTimeout(fn, ms));
-  const tap = (x, y) => { const t = q('tap'); t.style.left = x + 'px'; t.style.top = y + 'px'; t.classList.remove('go'); void t.offsetWidth; t.classList.add('go'); };
-  const show = name => ['home', 'share', 'transfer'].forEach((n, i, arr) => {
-    const idx = arr.indexOf(name);
-    pg(n).className = 'pg' + (i < idx ? ' off-l' : i > idx ? ' off-r' : '');
-  });
-
-  function reset(step) {
-    timers.forEach(clearTimeout); timers = [];
-    const pick = q('pick');
-    const selected = step >= 1;
-    pick.className = 'pbtn ' + (selected ? 'ok' : 'soft');
-    pick.textContent = selected ? '✓ 已选择 2 张照片' : '＋ 选择照片';
-    digits.forEach((d, i) => d.textContent = step >= 2 ? '4242'[i] : '');
-    q('start').className = 'pbtn ' + (step >= 2 ? 'blue' : 'gray');
-    const mbs = [...q('members').children];
-    mbs.forEach(m => { m.classList.toggle('hide', step < 2); const c = m.querySelector('.ck'); c.style.opacity = step >= 2 ? 1 : 0; c.classList.toggle('on', step >= 3); });
-    q('sec').style.opacity = step >= 2 ? 1 : 0;
-    q('confirm').style.opacity = step >= 2 ? 1 : 0;
-    q('confirm').textContent = '确认共享';
-    q('phase').textContent = step >= 2 ? '等待所有成员确认' : '正在发现附近设备...';
-    q('ring').style.strokeDashoffset = 339.3; q('num').textContent = '0';
-    q('ringWrap').style.opacity = 1; q('results').style.opacity = 0;
-    [...q('grid').children].forEach(c => c.classList.add('hide'));
-    show(step <= 1 ? 'home' : step === 2 ? 'share' : 'transfer');
-  }
-
-  const scripts = [
-    () => { reset(0); at(900, () => tap(136, 290)); at(1200, () => { const p = q('pick'); p.className = 'pbtn ok'; p.textContent = '✓ 已选择 2 张照片'; }); },
-    () => {
-      reset(1);
-      digits.forEach((d, i) => at(300 + i * 280, () => d.textContent = '4242'[i]));
-      at(1500, () => q('start').className = 'pbtn blue');
-      at(1900, () => tap(136, 408));
-      at(2200, () => show('share'));
-      [...q('members').children].forEach((m, i) => at(2700 + i * 400, () => m.classList.remove('hide')));
-    },
-    () => {
-      reset(1); show('share');
-      q('phase').textContent = '等待所有成员确认';
-      [...q('members').children].forEach(m => { m.classList.remove('hide'); m.querySelector('.ck').style.opacity = 1; });
-      at(200, () => { q('sec').style.opacity = 1; q('confirm').style.opacity = 1; });
-      at(1000, () => tap(136, 548));
-      [...q('members').children].forEach((m, i) => at(1200 + i * 650, () => m.querySelector('.ck').classList.add('on')));
-      at(1300, () => q('confirm').textContent = '取消共享');
-      at(3300, () => q('phase').textContent = '同步照片信息...');
-    },
-    () => {
-      reset(3);
-      for (let i = 1; i <= 4; i++) at(i * 450, () => { q('ring').style.strokeDashoffset = 339.3 * (1 - i / 4); q('num').textContent = i; });
-      at(2300, () => { q('ringWrap').style.opacity = 0; q('results').style.opacity = 1; });
-      [...q('grid').children].forEach((c, i) => at(2500 + i * 140, () => c.classList.remove('hide')));
-    },
-  ];
-  return { play: i => scripts[i]() };
-}
-
-const STATIC = document.documentElement.classList.contains('static');
-
-// hero phone: loops through all steps
-const hero = makePhone(document.getElementById('heroStage'));
-let heroStep = 0;
-hero.play(STATIC ? 3 : 0);
-if (!STATIC) setInterval(() => { heroStep = (heroStep + 1) % 4; hero.play(heroStep); }, STEP_MS);
-
-// steps section: auto-advance, click to jump
-const how = makePhone(document.getElementById('howStage'));
-const stepEls = [...document.querySelectorAll('.step')];
-let cur = 0, timer;
-function go(i) {
-  cur = i;
-  stepEls.forEach((el, k) => {
-    el.classList.toggle('on', k === i);
-    const bar = el.querySelector('.bar');
-    bar.style.transition = 'none'; bar.style.width = '0';
-    if (k === i) { void bar.offsetWidth; bar.style.transition = `width ${STEP_MS}ms linear`; bar.style.width = '100%'; }
-  });
-  how.play(i);
-  clearTimeout(timer);
-  if (!STATIC) timer = setTimeout(() => go((cur + 1) % 4), STEP_MS);
-}
-stepEls.forEach((el, i) => el.addEventListener('click', () => go(i)));
-go(0);
-
-// scroll reveal
-const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-</script>
 <script src="../assets/site.js"></script>
 </body>
 </html>
